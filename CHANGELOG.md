@@ -1,6 +1,12 @@
 # Miva IDE CHANGELOG
 
-## v1.30.0 (latest)
+## v1.31.0  (latest)
+
+* Added Miva Script debug snippets.
+	* `mv-debug`
+	* 'mv-debug-json'
+
+## v1.30.0
 
 * Added Miva Script command to insert next error code based off of "Prefix" and "Next Error Code" comment block.
 

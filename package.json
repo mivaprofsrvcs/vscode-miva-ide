@@ -2,7 +2,7 @@
 	"name": "vscode-miva-ide",
 	"displayName": "Miva IDE",
 	"description": "Syntax highlighting, snippets and tools for building websites with Miva.",
-	"version": "1.30.0",
+	"version": "1.31.0",
 	"engines": {
 		"vscode": "^1.77.0",
 		"node": ">=16"

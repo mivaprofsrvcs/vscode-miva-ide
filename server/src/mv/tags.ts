@@ -5,7 +5,30 @@ import {
 
 // Snippet data structure
 
-export const mvSnippetData: Record<string, TagSnippet> = {};
+export const mvSnippetData: Record<string, TagSnippet> = {
+	debug: {
+		insertTextFormat: 'Snippet',
+		kind: 'Function',
+		commitCharacters: [],
+		documentation: '',
+		insertText: `$\{2|<pre>,<!--|\}
+@@debug $1
+<MvEVAL EXPR = "{ glosub( miva_array_serialize( $\{1:variable\} ), ',', asciichar( 10 ) ) }">
+$\{3|</pre>,-->|\}`,
+		label: 'mv-debug'
+	},
+	debug_json: {
+		insertTextFormat: 'Snippet',
+		kind: 'Function',
+		commitCharacters: [],
+		documentation: '',
+		insertText: `$\{2|<pre>,<!--|\}
+@@debug $1
+<MvEVAL EXPR = "{ miva_json_encode( $\{1:variable\}, 'pretty' ) }">
+$\{3|</pre>,-->|\}`,
+		label: 'mv-debug-json'
+	}
+};
 
 // Full tag data structure
 
