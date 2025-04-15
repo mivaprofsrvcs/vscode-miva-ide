@@ -2,8 +2,9 @@
 
 ## v1.31.0  (latest)
 
-* Added Miva Script debug snippet.
+* Added Miva Script debug snippets.
 	* `mv-debug`
+	* 'mv-debug-json'
 
 ## v1.30.0
 
