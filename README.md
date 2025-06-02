@@ -10,8 +10,8 @@
 [![Downloads](https://img.shields.io/visual-studio-marketplace/d/mhegler.vscode-miva-ide?style=for-the-badge&colorA=252525&colorB=F7394A)](https://marketplace.visualstudio.com/items?itemName=mhegler.vscode-miva-ide)
 [![Ratings](https://img.shields.io/visual-studio-marketplace/r/mhegler.vscode-miva-ide?style=for-the-badge&colorA=252525&colorB=F7394A)](https://marketplace.visualstudio.com/items?itemName=mhegler.vscode-miva-ide)
 
-[![VSCE Pack](https://github.com/mghdotdev/vscode-miva-ide/actions/workflows/vsce-pack.yml/badge.svg)](https://github.com/mghdotdev/vscode-miva-ide/actions/workflows/vsce-pack.yml)
-[![VSCE Publish](https://github.com/mghdotdev/vscode-miva-ide/actions/workflows/vsce-publish.yml/badge.svg)](https://github.com/mghdotdev/vscode-miva-ide/actions/workflows/vsce-publish.yml)
+[![VSCE Pack](https://github.com/mivaprofsrvcs/vscode-miva-ide/actions/workflows/vsce-pack.yml/badge.svg)](https://github.com/mivaprofsrvcs/vscode-miva-ide/actions/workflows/vsce-pack.yml)
+[![VSCE Publish](https://github.com/mivaprofsrvcs/vscode-miva-ide/actions/workflows/vsce-publish.yml/badge.svg)](https://github.com/mivaprofsrvcs/vscode-miva-ide/actions/workflows/vsce-publish.yml)
 
 </div>
 
