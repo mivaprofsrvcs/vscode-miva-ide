@@ -65,7 +65,7 @@
 
 ## v1.23.1
 
-* Currency module functions will use global variable for file attribute now. Fixes issue [#117](https://github.com/mghdotdev/vscode-miva-ide/issues/117).
+* Currency module functions will use global variable for file attribute now. Fixes issue [#117](https://github.com/mivaprofsrvcs/vscode-miva-ide/issues/117).
 
 ## v1.23.0
 
@@ -98,7 +98,7 @@
 
 ## v1.21.1
 
-* __Miva Script:__ Fixed issue where the script compiler would display errors from included files in the main file. Fixes [#109](https://github.com/mghdotdev/vscode-miva-ide/issues/109).
+* __Miva Script:__ Fixed issue where the script compiler would display errors from included files in the main file. Fixes [#109](https://github.com/mivaprofsrvcs/vscode-miva-ide/issues/109).
 
 ## v1.21.0
 
@@ -111,11 +111,11 @@
 
 ## v1.19.2
 
-* Fixed variable conversion issue for global variables ([#100](https://github.com/mghdotdev/vscode-miva-ide/issues/100)).
+* Fixed variable conversion issue for global variables ([#100](https://github.com/mivaprofsrvcs/vscode-miva-ide/issues/100)).
 
 ## v1.19.1
 
-* Fixed global variable encoding diagnostic warning for local variables starting with `global` ([#102](https://github.com/mghdotdev/vscode-miva-ide/issues/102)).
+* Fixed global variable encoding diagnostic warning for local variables starting with `global` ([#102](https://github.com/mivaprofsrvcs/vscode-miva-ide/issues/102)).
 
 ## v1.19.0
 
@@ -301,7 +301,7 @@
 
 ## v1.3.0
 
-* Fixed expression syntax highlighting in Miva Script as per [issue #47](https://github.com/mghdotdev/vscode-miva-ide/issues/47).
+* Fixed expression syntax highlighting in Miva Script as per [issue #47](https://github.com/mivaprofsrvcs/vscode-miva-ide/issues/47).
 * Fixed MvDO VALUE attribute snippet. It should default to be an expression.
 * Removed mvt:else tag from mvt:if snippet.
 * Added workaround to trigger completion window on paste command.
@@ -310,10 +310,10 @@
 ## v1.2.0
 
 * Applied fixes to Miva Script snippets based off developer feedback
-* Fixed builtin function `miva_joinstring` flag parameter completion values as per [issue #52](https://github.com/mghdotdev/vscode-miva-ide/issues/52)
+* Fixed builtin function `miva_joinstring` flag parameter completion values as per [issue #52](https://github.com/mivaprofsrvcs/vscode-miva-ide/issues/52)
 * Added operators to expression completions results
 * Added engine version callouts to tags and builtin functions
-* Fixed indentation issues for block tags referenced in [issue #46](https://github.com/mghdotdev/vscode-miva-ide/issues/46)
+* Fixed indentation issues for block tags referenced in [issue #46](https://github.com/mivaprofsrvcs/vscode-miva-ide/issues/46)
 
 ## v1.1.0
 

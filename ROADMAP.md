@@ -37,14 +37,14 @@ This is the existing development flow. When new LSK or Empressa versions are rel
 ### v1.2.0
 
 - [x] Apply fixes to Miva Script snippets based off developer feedback
-- [x] Fix builtin function `miva_joinstring` flag parameter completion values as per [issue #52](https://github.com/mghdotdev/vscode-miva-ide/issues/52)
+- [x] Fix builtin function `miva_joinstring` flag parameter completion values as per [issue #52](https://github.com/mivaprofsrvcs/vscode-miva-ide/issues/52)
 - [x] Add operators to expression completions results
 - [x] Add engine version callouts to tags and builtin functions
 - [x] Fix indentation issues for block tags
 
 ### v1.3.0
 
-- [x] Fix expression syntax highlighting as per [issue #47](https://github.com/mghdotdev/vscode-miva-ide/issues/47)
+- [x] Fix expression syntax highlighting as per [issue #47](https://github.com/mivaprofsrvcs/vscode-miva-ide/issues/47)
 - [x] Fix MvDO VALUE attribute snippet. It should default to be an expression.
 - [x] Remove mvt:else tag from mvt:if snippet.
 - [x] Research if completion window can be triggered automatically on paste.
