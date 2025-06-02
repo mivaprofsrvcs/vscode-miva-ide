@@ -27,11 +27,11 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/mghdotdev/vscode-miva-ide.git"
+		"url": "https://github.com/mivaprofsrvcs/vscode-miva-ide.git"
 	},
 	"bugs": {
 		"email": "mhegler@miva.com",
-		"url": "https://github.com/mghdotdev/vscode-miva-ide/issues"
+		"url": "https://github.com/mivaprofsrvcs/vscode-miva-ide/issues"
 	},
 	"keywords": [
 		"snippets",
