@@ -66,6 +66,8 @@ export interface LanguageFeatures {
 
 	onDocumentLinks?: ( document: TextDocument ) => Promise<DocumentLink[]> | DocumentLink[];
 
+	findWorkspaceSymbols?: ( query: string, settings: Settings ) => Promise<SymbolInformation[]>;
+
 }
 
 export interface MvLanguageModel {

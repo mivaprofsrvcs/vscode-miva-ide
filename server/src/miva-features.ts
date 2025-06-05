@@ -1379,6 +1379,12 @@ export function activateFeatures({workspaceSymbolProvider, mivaScriptCompilerPro
 				return symbols;
 			},
 
+			async findWorkspaceSymbols( query: string, settings: Settings ): Promise<SymbolInformationWithDocumentation[]> {
+				await _createMivaScriptWorkspaceSymbols( workspace, settings, true );
+
+				return mivaScriptWorkspaceSymbols;
+			},
+
 			async findDefinition( document: TextDocument, position: Position, settings: Settings ) {
 				await _createMivaScriptWorkspaceSymbols(workspace, settings);
 
