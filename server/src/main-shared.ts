@@ -287,10 +287,18 @@ export function activate (connection: Connection, {workspaceSymbolProvider, miva
 	});
 
 	connection.onWorkspaceSymbol(( workspaceSymbolParams, token ) => {
-		return runSafe(() => {
+		return runSafeAsync(async () => {
+			const symbols: SymbolInformation[] = [];
+			const features = languages['mv'];
 
-			return [];
+			const document = TextDocument.create('file://null', 'mv', 1, '');
+			const settings = await getDocumentSettings(document);
 
+			if (features && features.findWorkspaceSymbols) {
+				pushAll(symbols, (await features.findWorkspaceSymbols(workspaceSymbolParams.query, settings)));
+			}
+
+			return symbols;
 		}, [], `Error while computing definitions for`, token );
 	});
 

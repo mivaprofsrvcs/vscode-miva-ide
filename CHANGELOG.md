@@ -1,6 +1,10 @@
 # Miva IDE CHANGELOG
 
-## v1.31.0  (latest)
+## v1.32.0 (latest)
+
+* Fixed issue where workspace level Miva Script symbols were not searchable.
+
+## v1.31.0
 
 * Added Miva Script debug snippets.
 	* `mv-debug`
