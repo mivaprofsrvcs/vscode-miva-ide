@@ -1,5 +1,5 @@
 import { SpawnOptionsWithoutStdio, spawn } from 'child_process';
-import { readdir, stat } from 'fs/promises';
+import { lstat, readdir } from 'fs/promises';
 import { dirname, join, sep } from 'path';
 
 export function asyncSpawn (command: string, args?: readonly string[], options?: SpawnOptionsWithoutStdio): Promise<{stdout: string, stderr: string}> {
@@ -37,7 +37,7 @@ export async function walk (dir: string, pathEnding: string): Promise<string[]> 
 	// @ts-ignore
 	files = await Promise.all(files.map(async file => {
 		const filePath = join(dir, file);
-		const stats = await stat(filePath);
+		const stats = await lstat(filePath);
 
 		if (stats.isDirectory()) {
 			return walk(filePath, pathEnding);

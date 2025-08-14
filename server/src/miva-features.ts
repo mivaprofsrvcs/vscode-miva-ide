@@ -1374,7 +1374,7 @@ export function activateFeatures({workspaceSymbolProvider, mivaScriptCompilerPro
 			},
 
 			findDocumentSymbols( document: TextDocument ): SymbolInformationWithDocumentation[] {
-				const {symbols} = mvDocuments.get( document )
+				const {symbols} = mvDocuments.get( document );
 
 				return symbols;
 			},
