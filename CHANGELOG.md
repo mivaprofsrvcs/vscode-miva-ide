@@ -1,6 +1,10 @@
 # Miva IDE CHANGELOG
 
-## v1.32.0 (latest)
+## v1.33.0 (latest)
+
+* Fixed bug where symbolic links within the workspace broke internal directory "walk" function.
+
+## v1.32.0
 
 * Fixed issue where workspace level Miva Script symbols were not searchable.
 
