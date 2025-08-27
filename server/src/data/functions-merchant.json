@@ -423,6 +423,15 @@
 				"description": "JSON_Input_xxx: Validate a parameter and return its result given the specified criteria"
 			},
 			{
+				"name": "JSON_Input_Weight",
+				"parameters": [
+					"required",
+					"param",
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "JSON_Input_Filter",
 				"parameters": [
 					"required",
@@ -464,8 +473,8 @@
 					"required",
 					"param",
 					"output var",
-					"scale",
-					"precision"
+					"precision",
+					"scale"
 				],
 				"returnValue": "l.void"
 			},
@@ -481,6 +490,25 @@
 			{
 				"name": "JSON_Input_Currency",
 				"parameters": [
+					"required",
+					"param",
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Input_Price",
+				"parameters": [
+					"required",
+					"param",
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Input_Element_Price",
+				"parameters": [
+					"element var",
 					"required",
 					"param",
 					"output var"
@@ -525,8 +553,8 @@
 					"param",
 					"output var",
 					"output_count var",
-					"scale",
-					"precision"
+					"precision",
+					"scale"
 				],
 				"returnValue": "l.void"
 			},
@@ -639,8 +667,8 @@
 					"required",
 					"param",
 					"output var",
-					"scale",
-					"precision"
+					"precision",
+					"scale"
 				],
 				"returnValue": "l.void"
 			},
@@ -672,8 +700,8 @@
 					"param",
 					"output var",
 					"output_count var",
-					"scale",
-					"precision"
+					"precision",
+					"scale"
 				],
 				"returnValue": "l.void"
 			},
@@ -700,6 +728,16 @@
 			},
 			{
 				"name": "JSON_Input_Element_DateTime",
+				"parameters": [
+					"element var",
+					"required",
+					"param",
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Input_Element_Weight",
 				"parameters": [
 					"element var",
 					"required",
@@ -1874,6 +1912,15 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "BeginScreen_Context_SetSubNavigationGroupWithSection",
+				"parameters": [
+					"context var",
+					"sub_navigation_group",
+					"section"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "BeginScreen_End",
 				"parameters": [
 					"title",
@@ -2841,6 +2888,34 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "Validate_Price_Optional",
+				"parameters": [
+					"value"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Validate_Price_Required",
+				"parameters": [
+					"value"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Validate_Price_NonNegative_Optional",
+				"parameters": [
+					"value"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Validate_Price_NonNegative_Required",
+				"parameters": [
+					"value"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "Validate_FloatingPoint_Optional",
 				"parameters": [
 					"value"
@@ -2921,11 +2996,41 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "Validate_Range",
+				"parameters": [
+					"value",
+					"low",
+					"high"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Validate_Weight",
+				"parameters": [
+					"value"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Validate_Weight_Required",
+				"parameters": [
+					"value"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Validate_Weight_Optional",
+				"parameters": [
+					"value"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "Validate_Decimal",
 				"parameters": [
 					"value",
-					"left",
-					"right"
+					"precision",
+					"scale"
 				],
 				"returnValue": "l.void"
 			},
@@ -3677,7 +3782,21 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "AvailabilityGroup_Insert_LowLevel",
+				"parameters": [
+					"availabilitygroup var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "AvailabilityGroup_Update",
+				"parameters": [
+					"availabilitygroup var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AvailabilityGroup_Update_LowLevel",
 				"parameters": [
 					"availabilitygroup var"
 				],
@@ -4313,6 +4432,244 @@
 		]
 	},
 	{
+		"distroPath": "g.Module_Feature_AI_UT_PUBLIC",
+		"functions": [
+			{
+				"name": "AISearchIndex_Default_Template",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Template_Filename",
+				"parameters": [
+					"index var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Template_Compile",
+				"parameters": [
+					"index var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Template_Delete",
+				"parameters": [
+					"index var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Template_Render",
+				"parameters": [
+					"index var",
+					"product var",
+					"hash var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Render_CustomField_Module",
+				"parameters": [
+					"struct var",
+					"member",
+					"callback_data var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Render_CustomField_Value",
+				"parameters": [
+					"struct var",
+					"member",
+					"callback_data var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Redis_Connect",
+				"parameters": [
+					"conn_id var"
+				],
+				"returnValue": "l.void",
+				"description": "Redis Functions"
+			},
+			{
+				"name": "AISearchIndex_Redis_Connect_LowLevel",
+				"parameters": [
+					"options var",
+					"conn_id var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Redis_Disconnect",
+				"parameters": [
+					"conn_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Redis_Index_Name",
+				"parameters": [
+					"aisettings var",
+					"index var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Redis_Product_Hash_Name",
+				"parameters": [
+					"aisettings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Redis_Product_Hash_Key_Name",
+				"parameters": [
+					"aisettings var",
+					"product_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Redis_Create_Index",
+				"parameters": [
+					"index var",
+					"embedding_source var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Redis_Create_Index_LowLevel",
+				"parameters": [
+					"conn_id",
+					"aisettings var",
+					"index var",
+					"embedding_source var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Redis_Delete_Index",
+				"parameters": [
+					"index var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Redis_Delete_Index_LowLevel",
+				"parameters": [
+					"conn_id",
+					"aisettings var",
+					"index var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Redis_Index_Info",
+				"parameters": [
+					"conn_id",
+					"index var",
+					"info var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Redis_Search_Index",
+				"parameters": [
+					"index var",
+					"query",
+					"options var",
+					"results var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Redis_Search_Index_LowLevel",
+				"parameters": [
+					"conn_id",
+					"aisettings var",
+					"index var",
+					"query",
+					"options var",
+					"results var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Redis_Index_Recreate",
+				"parameters": [
+					"index var",
+					"embedding_source var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Redis_Set_Hash_Value",
+				"parameters": [
+					"conn_id",
+					"aisettings var",
+					"index_id",
+					"product_id",
+					"value var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Redis_Delete_Product",
+				"parameters": [
+					"product_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Redis_Delete_Hash_Key",
+				"parameters": [
+					"conn_id",
+					"index_id",
+					"product_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Redis_Delete_Hash",
+				"parameters": [
+					"conn_id",
+					"aisettings var",
+					"product_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Redis_Info_Field",
+				"parameters": [
+					"data var",
+					"field_name",
+					"field_value var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Redis_Search_Version",
+				"parameters": [
+					"conn_id",
+					"version var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Redis_Server_Info",
+				"parameters": [
+					"options var",
+					"info var"
+				],
+				"returnValue": "l.void"
+			}
+		]
+	},
+	{
 		"distroPath": "g.Module_Feature_AI_AD",
 		"functions": [
 			{
@@ -4347,7 +4704,9 @@
 		"functions": [
 			{
 				"name": "AI_Store_Create",
-				"parameters": [],
+				"parameters": [
+					"store var"
+				],
 				"returnValue": "l.void"
 			},
 			{
@@ -4389,6 +4748,335 @@
 					"aisettings var"
 				],
 				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Read",
+				"parameters": [
+					"index var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Defaults",
+				"parameters": [
+					"index var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Insert",
+				"parameters": [
+					"index var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Insert_LowLevel",
+				"parameters": [
+					"index var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Update",
+				"parameters": [
+					"index var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Delete",
+				"parameters": [
+					"index var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Delete_LowLevel",
+				"parameters": [
+					"id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Load_ID",
+				"parameters": [
+					"id",
+					"index var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndex_Load_Code",
+				"parameters": [
+					"code",
+					"index var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexList_Load_All_Cached",
+				"parameters": [
+					"indexes var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "AISearchIndexList_Load_All",
+				"parameters": [
+					"indexes var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "AISearchIndexList_Load_Active_Cached",
+				"parameters": [
+					"indexes var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "AISearchIndexList_Load_Active",
+				"parameters": [
+					"indexes var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "AISearchIndexRelationalFields_Read",
+				"parameters": [
+					"aisearchindexrelationalfields var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexRelationalFields_Default",
+				"parameters": [
+					"aisearchindexrelationalfields var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexRelationalFields_Insert",
+				"parameters": [
+					"aisearchindexrelationalfields var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexRelationalFields_Delete_Index",
+				"parameters": [
+					"index_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexRelationalFields_Update",
+				"parameters": [
+					"aisearchindexrelationalfields var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexRelationalFields_Load_Index_Cached",
+				"parameters": [
+					"index_id",
+					"aisearchindexrelationalfields var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexRelationalFields_Load_Index",
+				"parameters": [
+					"index_id",
+					"aisearchindexrelationalfields var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexRelationalCustomField_Default",
+				"parameters": [
+					"index_id",
+					"module_id",
+					"field_code",
+					"aisearchindexrelationalcustomfield var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexRelationalCustomField_Read",
+				"parameters": [
+					"aisearchindexrelationalcustomfield var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexRelationalCustomFields_Equal_Default",
+				"parameters": [
+					"aisearchindexrelationalcustomfield var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexRelationalCustomField_Insert",
+				"parameters": [
+					"aisearchindexrelationalcustomfield var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexRelationalCustomField_Update",
+				"parameters": [
+					"aisearchindexrelationalcustomfield var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexRelationalCustomField_Delete_Field",
+				"parameters": [
+					"index_id",
+					"module_id",
+					"field_code"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexRelationalCustomField_Delete_All_Index",
+				"parameters": [
+					"index_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexRelationalCustomField_Disable_All_Index",
+				"parameters": [
+					"index_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexRelationalCustomField_Load_FieldOrDefault",
+				"parameters": [
+					"index_id",
+					"module_id",
+					"field_code",
+					"aisearchindexrelationalcustomfield var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexRelationalCustomField_Load",
+				"parameters": [
+					"index_id",
+					"module_id",
+					"field_code",
+					"aisearchindexrelationalcustomfield var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexRelationalCustomFieldList_Load_Index",
+				"parameters": [
+					"index_id",
+					"aisearchindexrelationalcustomfields var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "AISearchIndexXProduct_Read",
+				"parameters": [
+					"aisearchindexxproduct var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexXProduct_Insert",
+				"parameters": [
+					"aisearchindexxproduct var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexXProduct_Update",
+				"parameters": [
+					"aisearchindexxproduct var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexXProduct_Update_Indexed",
+				"parameters": [
+					"aisearchindexxproduct var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexXProduct_Delete",
+				"parameters": [
+					"index_id",
+					"product_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexXProduct_Delete_Processing",
+				"parameters": [
+					"index_id",
+					"product_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexXProduct_Delete_All_Index",
+				"parameters": [
+					"index_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexXProduct_Delete_All_Product",
+				"parameters": [
+					"product_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexXProduct_Insert_All_Products_Queued",
+				"parameters": [
+					"index var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexXProduct_Queue",
+				"parameters": [
+					"index_id",
+					"product_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexXProduct_Queue_Active",
+				"parameters": [
+					"index_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexXProduct_Count_Indexed",
+				"parameters": [
+					"index_id",
+					"count var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AISearchIndexXProduct_Count_Queued",
+				"parameters": [
+					"index_id",
+					"count var"
+				],
+				"returnValue": "l.void"
 			}
 		]
 	},
@@ -4396,7 +5084,158 @@
 		"distroPath": "g.Module_Feature_AI_JSON",
 		"functions": [
 			{
+				"name": "JSON_AISearchIndex",
+				"parameters": [
+					"aisearchindex var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_AISearchIndex_OnDemandColumns",
+				"parameters": [
+					"aisearchindex var",
+					"ondemandcolumns var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_AISearchIndex_Load",
+				"parameters": [
+					"index var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "JSON_AIGenerateText",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_AISearchIndexList_Load_Query",
+				"parameters": [],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "JSON_AISearchIndexList_Load_Query_Filter",
+				"parameters": [
+					"query var",
+					"field_count var",
+					"filter_name",
+					"filter_value",
+					"data var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "JSON_AISearchIndex_Validate",
+				"parameters": [
+					"index var",
+					"embedding_source var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_AISearchIndex_Insert",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_AISearchIndex_Update",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_AISearchIndexList_Delete",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_AISearchIndexEmbeddingList_Load",
+				"parameters": [],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "JSON_AISearchIndex_Rebuild",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_ProductList_Load_AISearch_Filter",
+				"parameters": [
+					"query var",
+					"field_count var",
+					"filter_name",
+					"filter_value",
+					"data var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "JSON_ProductList_Load_AISearch",
+				"parameters": [],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "JSON_ProductList_Load_AISearch_Relational",
+				"parameters": [
+					"index var",
+					"search",
+					"count",
+					"products var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "JSON_AISearchIndexRelationalField",
+				"parameters": [
+					"field var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_AISearchIndexRelationalCustomFieldModule_Capabilities",
+				"parameters": [
+					"capabilities var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_AISearchIndex_SearchableField_Load",
+				"parameters": [
+					"index var",
+					"searchablefield var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_AISearchIndex_SearchableCustomField_Load",
+				"parameters": [
+					"index var",
+					"searchablecustomfield var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_AISearchIndexRelationalFieldList_Load_Query",
+				"parameters": [],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "JSON_AISearchIndexRelationalFieldList_Sort_Callback",
+				"parameters": [
+					"left var",
+					"right var",
+					"sort"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_AISearchIndexRelationalField_Update",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_AISearchIndexRelationalCustomField_Update",
 				"parameters": [],
 				"returnValue": "l.void"
 			}
@@ -6387,7 +7226,7 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "CopyProduct_Reycle_Recommend",
+				"name": "CopyProduct_Recycle_Recommended",
 				"parameters": [],
 				"returnValue": "l.void"
 			},
@@ -7594,6 +8433,12 @@
 				"description": "Customer Price Groups"
 			},
 			{
+				"name": "JSON_CustomerAvailabilityGroupList_Load_Query",
+				"parameters": [],
+				"returnValue": "l.count",
+				"description": "Customer Availability Groups"
+			},
+			{
 				"name": "JSON_ShopAsCustomer_MostRecentBasket_Load_Customer",
 				"parameters": [],
 				"returnValue": "l.void",
@@ -8529,7 +9374,7 @@
 			{
 				"name": "DigitalDownload_Amazon_Endpoint",
 				"parameters": [
-					"region"
+					"region_code"
 				],
 				"returnValue": "l.void"
 			},
@@ -8553,6 +9398,14 @@
 				"name": "DigitalDownload_Amazon_Regions",
 				"parameters": [
 					"regions var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "DigitalDownload_Amazon_Region_Lookup",
+				"parameters": [
+					"value",
+					"region var"
 				],
 				"returnValue": "l.void"
 			},
@@ -11029,7 +11882,7 @@
 					"paymentcard var"
 				],
 				"returnValue": "l.void",
-				"description": "MivaPay"
+				"description": "MivaPay Vault"
 			},
 			{
 				"name": "MivaPay_SessionData",
@@ -11155,16 +12008,7 @@
 			{
 				"name": "MivaPay_Transaction_SOAP_Call_LowLevel",
 				"parameters": [
-					"api",
-					"endpoint",
-					"response_namespace_domain",
-					"headers",
-					"certfile",
-					"certtype",
-					"certpass",
-					"paymentcard var",
-					"request var",
-					"replacements",
+					"parameters var",
 					"response var"
 				],
 				"returnValue": "l.void"
@@ -11413,15 +12257,6 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "JSON_PageBuilderPage_Preview_Build_Input_Array",
-				"parameters": [
-					"param",
-					"output var",
-					"output_count var"
-				],
-				"returnValue": "l.void"
-			},
-			{
 				"name": "JSON_PageBuilderPage_Preview_Response_Error",
 				"parameters": [],
 				"returnValue": "l.void"
@@ -11478,6 +12313,33 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "JSON_PageBuilder_Element_Validate_Property_BorderThickness",
+				"parameters": [
+					"input_settings var",
+					"property var",
+					"output_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_PageBuilder_Element_Validate_Property_Breakpoint",
+				"parameters": [
+					"input_settings var",
+					"property var",
+					"output_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_PageBuilder_Element_Validate_Property_Button",
+				"parameters": [
+					"input_settings var",
+					"property var",
+					"output_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "JSON_PageBuilder_Element_Validate_Property_Radio",
 				"parameters": [
 					"input_settings var",
@@ -11523,6 +12385,15 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "JSON_PageBuilder_Element_Validate_Property_DropShadow",
+				"parameters": [
+					"input_settings var",
+					"property var",
+					"output_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "JSON_PageBuilder_Element_Validate_Property_Checkbox",
 				"parameters": [
 					"input_settings var",
@@ -11541,10 +12412,22 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "JSON_PageBuilder_Element_Validate_Property_Text_LowLevel",
+				"name": "JSON_PageBuilder_Element_Validate_Property_TextSettings",
 				"parameters": [
 					"input_settings var",
 					"property var",
+					"output_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_PageBuilder_Element_Validate_TextSettings_Field_WithVisibilityConditions",
+				"parameters": [
+					"input_settings var",
+					"property var",
+					"field var",
+					"pseudoclass var",
+					"processed_fields var",
 					"output_settings var"
 				],
 				"returnValue": "l.void"
@@ -11569,6 +12452,15 @@
 			},
 			{
 				"name": "JSON_PageBuilder_Element_Validate_Property_Image",
+				"parameters": [
+					"input_settings var",
+					"property var",
+					"output_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_PageBuilder_Element_Validate_Property_Padding",
 				"parameters": [
 					"input_settings var",
 					"property var",
@@ -11613,6 +12505,24 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "JSON_PageBuilder_Element_Validate_Property_Font",
+				"parameters": [
+					"input_settings var",
+					"property var",
+					"output_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_PageBuilder_Element_Validate_Property_Typography",
+				"parameters": [
+					"input_settings var",
+					"property var",
+					"output_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "JSON_PageBuilder_Element_Validate_Property_Fragment",
 				"parameters": [
 					"input_settings var",
@@ -11631,6 +12541,15 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "JSON_PageBuilder_Element_Validate_Property_LengthUnit",
+				"parameters": [
+					"input_settings var",
+					"property var",
+					"output_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "JSON_PageBuilder_Element_Validate_Property_Link",
 				"parameters": [
 					"input_settings var",
@@ -11641,6 +12560,15 @@
 			},
 			{
 				"name": "JSON_PageBuilder_Element_Validate_Property_Color",
+				"parameters": [
+					"input_settings var",
+					"property var",
+					"output_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_PageBuilder_Element_Validate_Property_CornerRadius",
 				"parameters": [
 					"input_settings var",
 					"property var",
@@ -11681,6 +12609,390 @@
 					"input_settings var",
 					"property var",
 					"output_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_PageBuilder_Input_Element_Button",
+				"parameters": [
+					"property_or_field var",
+					"element_button var",
+					"required",
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_PageBuilder_Input_Element_Typography",
+				"parameters": [
+					"property_or_field var",
+					"element_typography var",
+					"required",
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_PageBuilder_Input_Element_Font",
+				"parameters": [
+					"element var",
+					"required",
+					"param",
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_PageBuilder_Input_Element_Font_LowLevel",
+				"parameters": [
+					"element_font var",
+					"required",
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme",
+				"parameters": [
+					"theme var"
+				],
+				"returnValue": "l.void",
+				"description": "Theme"
+			},
+			{
+				"name": "JSON_Theme_LengthUnit",
+				"parameters": [
+					"style var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Boolean",
+				"parameters": [
+					"style var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Value",
+				"parameters": [
+					"style var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Load",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Update",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Update_LowLevel",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Preview",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Preview_ValidatePreviewSession",
+				"parameters": [
+					"pagebuilderpreviewsession var",
+					"pagebuilderpreviewsessionfragmentkey var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_MaintenanceMode_Bypass_Theme_Preview",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Preview_LowLevel",
+				"parameters": [
+					"page_id",
+					"pagebuilderpreviewsession var",
+					"pagebuilderpreviewsessionfragmentkey var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Preview_Response_Error",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Parse",
+				"parameters": [
+					"data var",
+					"theme var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Parse_Layout",
+				"parameters": [
+					"data var",
+					"theme var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Parse_Layout_Breakpoint",
+				"parameters": [
+					"theme var",
+					"input_breakpoint var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Parse_Buttons",
+				"parameters": [
+					"data var",
+					"theme var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Parse_Button_Delete",
+				"parameters": [
+					"theme var",
+					"input_button var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Parse_Button_Add",
+				"parameters": [
+					"theme var",
+					"input_button var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Parse_Button_Update",
+				"parameters": [
+					"theme var",
+					"input_button var",
+					"existing_only"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Parse_Button_Update_Order",
+				"parameters": [
+					"data var",
+					"theme var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Parse_Typographies",
+				"parameters": [
+					"data var",
+					"theme var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Parse_Typography_Delete",
+				"parameters": [
+					"theme var",
+					"input_typography var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Parse_Typography_Add",
+				"parameters": [
+					"theme var",
+					"input_typography var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Parse_Typography_Update",
+				"parameters": [
+					"theme var",
+					"input_typography var",
+					"existing_only"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Parse_Typography_Update_Order",
+				"parameters": [
+					"data var",
+					"theme var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Parse_ThemeButton_Styles",
+				"parameters": [
+					"theme var",
+					"input_styles var",
+					"styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Parse_ThemeButton_StateStyles",
+				"parameters": [
+					"theme var",
+					"styles var",
+					"input_state_styles var",
+					"state_styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Parse_ThemeButton_Sizes",
+				"parameters": [
+					"theme var",
+					"input_sizes var",
+					"input_size_count",
+					"button var",
+					"sizes var",
+					"size_count var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Parse_ThemeButton_Size_Styles",
+				"parameters": [
+					"theme var",
+					"input_styles var",
+					"styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Parse_ThemeButton_Size_BreakpointStyles",
+				"parameters": [
+					"theme var",
+					"input_breakpoint_styles var",
+					"breakpoint_styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Parse_ThemeTypography_Styles",
+				"parameters": [
+					"theme var",
+					"input_styles var",
+					"type",
+					"styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Parse_ThemeTypography_BreakpointStyles",
+				"parameters": [
+					"theme var",
+					"input_breakpoint_styles var",
+					"breakpoint_styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Parse_ThemeTypography_BreakpointStyles_Styles",
+				"parameters": [
+					"theme var",
+					"input_styles var",
+					"styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Input_Element_Boolean",
+				"parameters": [
+					"element var",
+					"required",
+					"param",
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Input_Element_Text",
+				"parameters": [
+					"element var",
+					"required",
+					"param",
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Input_Element_List",
+				"parameters": [
+					"element var",
+					"required",
+					"param",
+					"output var",
+					"param_values",
+					"result_values"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Input_Element_LengthUnit",
+				"parameters": [
+					"element var",
+					"required",
+					"param",
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Input_Element_LengthUnit_LowLevel",
+				"parameters": [
+					"element_lengthunit var",
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Input_Element_Font",
+				"parameters": [
+					"element var",
+					"required",
+					"param",
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Theme_Input_Element_Font_LowLevel",
+				"parameters": [
+					"element_font var",
+					"required",
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_PGB_Form_Input_Array",
+				"parameters": [
+					"param",
+					"output var",
+					"output_count var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_PGB_Form_Input_Structure",
+				"parameters": [
+					"param",
+					"output var"
 				],
 				"returnValue": "l.void"
 			}
@@ -11752,7 +13064,8 @@
 			{
 				"name": "PageBuilderPreview_RenderPage",
 				"parameters": [
-					"page var"
+					"page var",
+					"page_rendered var"
 				],
 				"returnValue": "l.void"
 			},
@@ -11764,6 +13077,94 @@
 			{
 				"name": "PageBuilder_CMark_Supported",
 				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "MMXFontFamily_To_FontProperty",
+				"parameters": [
+					"font_family"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Theme_Lockfile_Path",
+				"parameters": [],
+				"returnValue": "l.void",
+				"description": "Theme"
+			},
+			{
+				"name": "Theme_Validate_ClassName",
+				"parameters": [
+					"theme var",
+					"data var",
+					"classname"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Theme_Validate_Button_ClassName",
+				"parameters": [
+					"theme var",
+					"button_code",
+					"classname"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Theme_Validate_Button_Size_ClassName",
+				"parameters": [
+					"theme var",
+					"button_code",
+					"size_code",
+					"classname"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Theme_Validate_Typography_ClassName",
+				"parameters": [
+					"theme var",
+					"typography_code",
+					"classname"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Theme_Generate_Classname",
+				"parameters": [
+					"theme var",
+					"data var",
+					"base_classname",
+					"classname var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Theme_Generate_Button_Classname",
+				"parameters": [
+					"theme var",
+					"button var",
+					"classname var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Theme_Generate_Button_Size_Classname",
+				"parameters": [
+					"theme var",
+					"button var",
+					"size var",
+					"classname var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Theme_Generate_Typography_Classname",
+				"parameters": [
+					"theme var",
+					"typography var",
+					"classname var"
+				],
 				"returnValue": "l.void"
 			}
 		]
@@ -13367,6 +14768,13 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "CouponXShopper_Delete_All_Customer",
+				"parameters": [
+					"cust_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "CouponXAnonymousShopper_Read",
 				"parameters": [
 					"couponxanonymousshopper var"
@@ -14695,6 +16103,14 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "Action_ApplyCouponToBasket_LowLevel",
+				"parameters": [
+					"coupon_code",
+					"ui_exception var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "Action_RemoveCouponFromBasket",
 				"parameters": [],
 				"returnValue": "l.void"
@@ -15192,7 +16608,7 @@
 				"parameters": [
 					"discount_state var",
 					"item var",
-					"amount"
+					"total_price"
 				],
 				"returnValue": "l.void"
 			},
@@ -15379,16 +16795,27 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "DiscountState_BasketItem_Insert",
+				"name": "DiscountState_Calculate_Item_Total",
 				"parameters": [
 					"item var"
 				],
 				"returnValue": "l.void"
 			},
 			{
+				"name": "DiscountState_BasketItem_Insert",
+				"parameters": [
+					"item var",
+					"notify_items var",
+					"notify_item_count var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "DiscountState_BasketItem_Update",
 				"parameters": [
-					"item var"
+					"item var",
+					"notify_items var",
+					"notify_item_count var"
 				],
 				"returnValue": "l.void"
 			},
@@ -15435,7 +16862,34 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "DiscountState_Item_Compare_Common",
+				"parameters": [
+					"left var",
+					"right var",
+					"data var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "DiscountState_Item_Compare",
+				"parameters": [
+					"left var",
+					"right var",
+					"data var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "DiscountState_Item_Child_Compare",
+				"parameters": [
+					"left var",
+					"right var",
+					"data var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "DiscountState_Item_Children_Compare",
 				"parameters": [
 					"left var",
 					"right var",
@@ -15782,6 +17236,16 @@
 					"item var",
 					"quantity",
 					"percent"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "DiscountState_Split_Item",
+				"parameters": [
+					"discount_state var",
+					"item var",
+					"quantity",
+					"ref var"
 				],
 				"returnValue": "l.void"
 			},
@@ -16296,6 +17760,144 @@
 				"name": "PRV_Action_Provision_Store_PageItem_Unassign",
 				"parameters": [
 					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Action_Provision_Store_ThemeLayout_Update",
+				"parameters": [
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Action_Provision_Store_ThemeButton_Add",
+				"parameters": [
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Action_Provision_Store_ThemeButton_Delete",
+				"parameters": [
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Action_Provision_Store_ThemeButton_Delete_All",
+				"parameters": [
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Theme_ThemeButton_Styles",
+				"parameters": [
+					"provide_xml var",
+					"styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Theme_ThemeButton_StateStyles",
+				"parameters": [
+					"provide_xml var",
+					"styles var",
+					"state_styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Theme_ThemeButton_Sizes",
+				"parameters": [
+					"provide_xml var",
+					"theme var",
+					"button var",
+					"sizes var",
+					"size_count var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Theme_ThemeButton_Size_Styles",
+				"parameters": [
+					"provide_xml var",
+					"styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Theme_ThemeButton_Size_BreakpointStyles",
+				"parameters": [
+					"provide_xml var",
+					"breakpoint_styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Action_Provision_Store_ThemeTypography_Add",
+				"parameters": [
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Action_Provision_Store_ThemeTypography_Delete",
+				"parameters": [
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Action_Provision_Store_ThemeTypography_Delete_All",
+				"parameters": [
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Theme_ThemeTypography_Styles",
+				"parameters": [
+					"provide_xml var",
+					"type",
+					"styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Theme_ThemeTypography_BreakpointStyles",
+				"parameters": [
+					"provide_xml var",
+					"breakpoint_styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Theme_ThemeTypography_BreakpointStyles_Styles",
+				"parameters": [
+					"provide_xml var",
+					"styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Theme_Tag_LengthUnit",
+				"parameters": [
+					"required",
+					"provide_xml var",
+					"tag_name",
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Theme_Tag_Font",
+				"parameters": [
+					"required",
+					"provide_xml var",
+					"tag_name",
+					"output var"
 				],
 				"returnValue": "l.void"
 			},
@@ -17405,7 +19007,7 @@
 			{
 				"name": "PRV_Order_CustomField_Handler",
 				"parameters": [
-					"provide_xml",
+					"provide_xml var",
 					"module_code",
 					"order var",
 					"field_code",
@@ -17736,6 +19338,27 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "PRV_Action_Provision_Store_Font_Add",
+				"parameters": [
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Action_Provision_Store_Font_Delete",
+				"parameters": [
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Action_Provision_Store_Font_Delete_All",
+				"parameters": [
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "PRV_Action_Provision_Store_Image_Add",
 				"parameters": [
 					"provide_xml var"
@@ -18044,7 +19667,7 @@
 			{
 				"name": "PRV_Action_Provision_Store_DigitalDownloadCDN_Validate_Amazon",
 				"parameters": [
-					"provide_xml",
+					"provide_xml var",
 					"data var"
 				],
 				"returnValue": "l.void"
@@ -18176,6 +19799,52 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "PRV_Action_Provision_Store_AISettings_Update",
+				"parameters": [
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Action_Provision_Store_AISearchIndex_Add",
+				"parameters": [
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Action_Provision_Store_AISearchIndex_Update",
+				"parameters": [
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Action_Provision_Store_AISearchIndex_Delete",
+				"parameters": [
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_AISearchIndex_RelationalFields",
+				"parameters": [
+					"provide_xml var",
+					"relationalfields var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_AISearchIndex_RelationalCustomFields",
+				"parameters": [
+					"provide_xml var",
+					"original_relationalcustomfields var",
+					"original_relationalcustomfield_count",
+					"relationalcustomfields var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "PRV_Action_Provision_Store_FacetRules_Update",
 				"parameters": [
 					"provide_xml var"
@@ -18280,20 +19949,13 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "PRV_Action_Provision_Domain_AdminDisablingUpdate",
-				"parameters": [
-					"provide_xml var"
-				],
-				"returnValue": "l.void",
-				"description": "Domain Provisioning Functions"
-			},
-			{
 				"name": "PRV_User_Icon",
 				"parameters": [
 					"provide_xml var",
 					"user var"
 				],
-				"returnValue": "l.void"
+				"returnValue": "l.void",
+				"description": "Domain Provisioning Functions"
 			},
 			{
 				"name": "PRV_User_Expiration",
@@ -18376,6 +20038,13 @@
 			},
 			{
 				"name": "PRV_Action_Provision_Store_CacheSettings_Update",
+				"parameters": [
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Action_Provision_Store_RedisSettings_Update",
 				"parameters": [
 					"provide_xml var"
 				],
@@ -18727,8 +20396,8 @@
 					"provide_xml var",
 					"attribute_name",
 					"output var",
-					"scale",
-					"precision"
+					"precision",
+					"scale"
 				],
 				"returnValue": "l.void"
 			},
@@ -18753,7 +20422,7 @@
 			{
 				"name": "PRV_Attribute_List",
 				"parameters": [
-					"provide_xml",
+					"provide_xml var",
 					"attribute_name",
 					"output var",
 					"attribute_values",
@@ -18764,7 +20433,7 @@
 			{
 				"name": "PRV_Attribute_Exists",
 				"parameters": [
-					"provide_xml",
+					"provide_xml var",
 					"attribute_name"
 				],
 				"returnValue": "l.void"
@@ -18796,13 +20465,23 @@
 					"provide_xml var",
 					"tag_name",
 					"output var",
-					"scale",
-					"precision"
+					"precision",
+					"scale"
 				],
 				"returnValue": "l.void"
 			},
 			{
 				"name": "PRV_Tag_Integer",
+				"parameters": [
+					"required",
+					"provide_xml var",
+					"tag_name",
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Tag_Price",
 				"parameters": [
 					"required",
 					"provide_xml var",
@@ -18844,6 +20523,16 @@
 			{
 				"name": "PRV_Tag_Date",
 				"parameters": [
+					"provide_xml var",
+					"tag_name",
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "PRV_Tag_Weight",
+				"parameters": [
+					"required",
 					"provide_xml",
 					"tag_name",
 					"output var"
@@ -19372,13 +21061,6 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "SearchSettings_Update_LowLevel",
-				"parameters": [
-					"searchsettings var"
-				],
-				"returnValue": "l.void"
-			},
-			{
 				"name": "SearchSettings_Load_Cached",
 				"parameters": [
 					"searchsettings var"
@@ -19649,7 +21331,8 @@
 					"field_code",
 					"searchablefield var"
 				],
-				"returnValue": "l.void"
+				"returnValue": "l.void",
+				"description": "Searchable Fields"
 			},
 			{
 				"name": "SearchableFieldList_Load_All_Builtins",
@@ -19689,13 +21372,6 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "ProductCustomFieldList_Load_Searchable",
-				"parameters": [
-					"customfields var"
-				],
-				"returnValue": "l.count"
-			},
-			{
 				"name": "SearchableCustomFieldList_Load_With_Capabilities_Cached",
 				"parameters": [
 					"searchablecustomfields var"
@@ -19704,6 +21380,96 @@
 			},
 			{
 				"name": "SearchableCustomFieldList_Load_With_Capabilities",
+				"parameters": [
+					"searchablecustomfields var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "SearchableField_Load_AISearchIndex_Builtin",
+				"parameters": [
+					"index var",
+					"field_code",
+					"searchablefield var"
+				],
+				"returnValue": "l.void",
+				"description": "AI Search Index Relational Fields"
+			},
+			{
+				"name": "SearchableFieldList_Load_All_AISearchIndex_Builtins",
+				"parameters": [
+					"index var",
+					"searchablefields var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "SearchableField_Update_AISearchIndex_Builtin",
+				"parameters": [
+					"index var",
+					"searchablefield var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "SearchableField_Load_AISearchIndex_CustomField",
+				"parameters": [
+					"index var",
+					"module_id",
+					"field_code",
+					"searchablecustomfield var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "SearchableFieldList_Load_All_AISearchIndex_CustomFields",
+				"parameters": [
+					"index var",
+					"searchablecustomfields var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "SearchableField_Update_AISearchIndex_CustomField",
+				"parameters": [
+					"index var",
+					"searchablecustomfield var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "SearchableCustomFieldList_Load_AISearchIndex_With_Capabilities_Cached",
+				"parameters": [
+					"index var",
+					"searchablecustomfields var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "SearchableCustomFieldList_Load_AISearchIndex_With_Capabilities",
+				"parameters": [
+					"index var",
+					"searchablecustomfields var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "ProductCustomFieldList_Load_Searchable",
+				"parameters": [
+					"customfields var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "SearchSettings_Load_Notify",
+				"parameters": [
+					"searchsettings var"
+				],
+				"returnValue": "l.void",
+				"description": "These functions create consolidated SearchSettings and SearchableCustomField lists that reflect the combined\n\nfulltext status across the system search and all AI Search Indexes, and are used when notifying modules and\n\nmaking decisions about creating/dropping FULLTEXT indexes."
+			},
+			{
+				"name": "SearchableCustomFieldList_Load_Notify",
 				"parameters": [
 					"searchablecustomfields var"
 				],
@@ -19726,7 +21492,8 @@
 				"parameters": [
 					"search",
 					"total_count",
-					"origin"
+					"origin",
+					"index_id"
 				],
 				"returnValue": "l.void"
 			},
@@ -20606,6 +22373,23 @@
 					"basketitem_count",
 					"filtered_methods var",
 					"filtered_methods_count var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ShippingMethodList_Filter_ExcludeByDefault_Master",
+				"parameters": [
+					"product_id",
+					"method var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ShippingMethodList_Filter_ExcludeByDefault_Variants",
+				"parameters": [
+					"product_id",
+					"variant_id",
+					"method var"
 				],
 				"returnValue": "l.void"
 			},
@@ -22281,7 +24065,9 @@
 			},
 			{
 				"name": "TUI_Store_Create",
-				"parameters": [],
+				"parameters": [
+					"store var"
+				],
 				"returnValue": "l.void"
 			},
 			{
@@ -28185,6 +29971,121 @@
 				"name": "ManagedContent_Decrement_All_Orphaned_JavaScriptResources",
 				"parameters": [],
 				"returnValue": "l.void"
+			},
+			{
+				"name": "ManagedContent_Decrement_All_ManagedProperty",
+				"parameters": [
+					"prop_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ManagedContent_Decrement_All_Orphaned_ManagedProperties",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Font_Copy",
+				"parameters": [
+					"source var",
+					"dest var"
+				],
+				"returnValue": "l.void",
+				"description": "Fonts"
+			},
+			{
+				"name": "Font_Read",
+				"parameters": [
+					"managedproperty var",
+					"font var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Font_Load_Code_Cached",
+				"parameters": [
+					"code",
+					"font var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Font_Load_Branch_Code_Cached",
+				"parameters": [
+					"branch_id",
+					"code",
+					"font var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Font_Load_Code",
+				"parameters": [
+					"code",
+					"font var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Font_Load_Branch_Code",
+				"parameters": [
+					"branch_id",
+					"code",
+					"font var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "FontList_Load_Active",
+				"parameters": [
+					"fonts var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "FontList_Load_Branch_Active",
+				"parameters": [
+					"branch_id",
+					"fonts var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "FontList_Load_All",
+				"parameters": [
+					"fonts var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "FontList_Load_Branch_All",
+				"parameters": [
+					"branch_id",
+					"fonts var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "Font_Insert",
+				"parameters": [
+					"font var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Font_Update",
+				"parameters": [
+					"original_font var",
+					"font var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Font_Delete",
+				"parameters": [
+					"font var"
+				],
+				"returnValue": "l.void"
 			}
 		]
 	},
@@ -28997,6 +30898,50 @@
 			},
 			{
 				"name": "JSON_ResourceGroup_LinkedJavaScriptResourceList_DisplayOrder_Update",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Font",
+				"parameters": [
+					"font var"
+				],
+				"returnValue": "l.void",
+				"description": "Fonts"
+			},
+			{
+				"name": "JSON_Font_Load",
+				"parameters": [
+					"font var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_FontList_Load_Query",
+				"parameters": [],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "JSON_FontList_Sort_Callback",
+				"parameters": [
+					"left var",
+					"right var",
+					"sort var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Font_Insert",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Font_Update",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_FontList_Delete",
 				"parameters": [],
 				"returnValue": "l.void"
 			},
@@ -30120,7 +32065,7 @@
 				"parameters": [
 					"uridata var",
 					"member",
-					"settings var"
+					"uridata_loaded var"
 				],
 				"returnValue": "l.void"
 			},
@@ -31668,6 +33613,21 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "TemplateManager_ManagedProperty_SettingsAndContent",
+				"parameters": [
+					"settings var",
+					"content_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "TemplateManager_ManagedProperty_IsSettingsAndContent",
+				"parameters": [
+					"settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "TemplateManager_Create_Immutable_ManagedPropertyVersion",
 				"parameters": [
 					"managedproperty var",
@@ -31735,6 +33695,33 @@
 					"previous_version_id",
 					"new_version_id"
 				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "TemplateManager_Load_Theme",
+				"parameters": [
+					"theme var"
+				],
+				"returnValue": "l.void",
+				"description": "Theme"
+			},
+			{
+				"name": "TemplateManager_Update_Theme",
+				"parameters": [
+					"theme var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "TemplateManager_Preview_Theme",
+				"parameters": [
+					"theme var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "TemplateManager_Preview_Theme_Active",
+				"parameters": [],
 				"returnValue": "l.void"
 			},
 			{
@@ -31951,6 +33938,20 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "SKIN_Install_Fonts",
+				"parameters": [
+					"control var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "SKIN_Install_Theme",
+				"parameters": [
+					"control var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "SKIN_Install_DetokenizePath",
 				"parameters": [
 					"basehref var",
@@ -32129,583 +34130,11 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "Convert_StoreID_URL_Tokens",
-				"parameters": [
-					"original_css",
-					"tokenized_css var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Build_CSS_Export_Path",
-				"parameters": [
-					"skin_dir",
-					"full_css_path",
-					"output"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "SKIN_Export_Config",
-				"parameters": [
-					"SKIN_dir",
-					"component_list",
-					"control var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CustomerFields_Translate_Value",
-				"parameters": [
-					"value"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "SKIN_Export_Remove_Assignment",
-				"parameters": [
-					"settings",
-					"remove"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "SKIN_Directory_Verify",
+				"name": "SKIN_Export_Fonts",
 				"parameters": [
 					"skin_code",
-					"skin_dir var",
-					"skin_file var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_Order",
-				"parameters": [
-					"order var"
-				],
-				"returnValue": "l.void",
-				"description": "Common component field initialization routines"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_Order_RemovePII",
-				"parameters": [
-					"order var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_OrderItems",
-				"parameters": [
-					"orderitems var",
-					"orderitem_count"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_OrderItem",
-				"parameters": [
-					"orderitem var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_OrderItems_WithParts",
-				"parameters": [
-					"orderitems var",
-					"orderitem_count"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_OrderItem_WithParts",
-				"parameters": [
-					"orderitem var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_OrderShipment",
-				"parameters": [
-					"shipment var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_OrderReturn",
-				"parameters": [
-					"return var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_OrderCharges",
-				"parameters": [
-					"ordercharges var",
-					"ordercharge_count"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_OrderCharge",
-				"parameters": [
-					"ordercharge var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_Product_CustomField_Lookup",
-				"parameters": [
-					"all_settings var",
-					"fields_custom var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_Product_Runtime",
-				"parameters": [
-					"product var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_Product_Discounts_Runtime",
-				"parameters": [
-					"products var",
-					"product_count"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_Product_Discounts_Runtime_WithProductSubscriptionTerm",
-				"parameters": [
-					"product var",
-					"subterm_id"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_Product_CustomFields",
-				"parameters": [
-					"product_id",
-					"output var",
-					"all_settings var",
-					"fields_custom var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_Product_CustomField",
-				"parameters": [
-					"product_id",
-					"output var",
-					"all_settings var",
-					"module_code",
-					"field_code"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_Category_CustomField_Lookup",
-				"parameters": [
-					"all_settings var",
-					"fields_custom var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_Category_CustomFields",
-				"parameters": [
-					"cat_id",
-					"output var",
-					"all_settings var",
-					"fields_custom var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_Category_CustomField",
-				"parameters": [
-					"cat_id",
-					"output var",
-					"all_settings var",
-					"module_code",
-					"field_code"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_Order_CustomField_Lookup",
-				"parameters": [
-					"all_settings var",
-					"fields_custom var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_Order_CustomFields",
-				"parameters": [
-					"order_id",
-					"output var",
-					"all_settings var",
-					"fields_custom var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_Order_CustomField",
-				"parameters": [
-					"order_id",
-					"output var",
-					"all_settings var",
-					"module_code",
-					"field_code"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Merge_BasketOrOrderItem_Groups",
-				"parameters": [
-					"items var",
-					"item_count",
-					"groups var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_BasketItems",
-				"parameters": [
-					"basketitems var",
-					"basketitem_count"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_Product_ImageTypes",
-				"parameters": [
-					"product_id",
-					"variant_id",
-					"output var",
-					"all_settings var",
-					"imagetypes var",
-					"constrain",
-					"b_width",
-					"b_height"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_Product_Facets",
-				"parameters": [
-					"facets var",
-					"facet_count"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_BasketItem",
-				"parameters": [
-					"basketitem var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_BasketItems_WithParts",
-				"parameters": [
-					"basketitems var",
-					"basketitem_count"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_BasketItem_WithParts",
-				"parameters": [
-					"basketitem var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_BasketCharges",
-				"parameters": [
-					"basketcharges var",
-					"basketcharge_count"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_BasketCharge",
-				"parameters": [
-					"basketcharge var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_PaymentMethod_Description",
-				"parameters": [
-					"module var",
-					"serialized_pay_data var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_DigitalDownload",
-				"parameters": [
-					"digitaldownload var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_GiftCertificate",
-				"parameters": [
-					"giftcertificate var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_Subscription",
-				"parameters": [
-					"all_settings var",
-					"settings var",
-					"subscription var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_Subscription_Fields",
-				"parameters": [
-					"all_settings var",
-					"settings var",
-					"subscription var",
-					"original_basket var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_Subscription_CleanupTemporaryBasket",
-				"parameters": [
-					"original_basket var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "StripSpecialCharacters_TemplateCode",
-				"parameters": [
-					"code"
-				],
-				"returnValue": "l.void",
-				"description": "Component Initialization Helper Functions"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_xxx_CustomField_ModuleList_Load",
-				"parameters": [
-					"all_settings var",
-					"fields_custom var",
-					"field_feature",
-					"modules var"
-				],
-				"returnValue": "l.count"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_xxx_CustomField_Filter_ModuleFields",
-				"parameters": [
-					"module var",
-					"fields_custom var",
-					"module_fields var",
-					"module_field_count",
-					"fields var",
-					"field_count var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CommonComponentFields_Initialize_xxx_CustomField_Lookup",
-				"parameters": [
-					"fields var",
-					"field_count",
-					"field_map_feature",
-					"master_plan var",
-					"customfield_names var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CopyPage_Copy",
-				"parameters": [
-					"copypagerules var",
-					"source_branch var",
-					"source_page var",
-					"dest_branch var",
-					"dest_page var"
-				],
-				"returnValue": "l.void",
-				"description": "Page Copy"
-			},
-			{
-				"name": "CopyPage_Copy_Secure",
-				"parameters": [
-					"copypagerules var",
-					"source_branch var",
-					"source_page var",
-					"dest_branch var",
-					"dest_page var",
-					"data var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CopyPage_Copy_Title",
-				"parameters": [
-					"copypagerules var",
-					"source_branch var",
-					"source_page var",
-					"dest_branch var",
-					"dest_page var",
-					"data var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CopyPage_Copy_Items",
-				"parameters": [
-					"copypagerules var",
-					"source_branch var",
-					"source_page var",
-					"dest_branch var",
-					"dest_page var",
-					"data var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CopyPage_Copy_Settings",
-				"parameters": [
-					"copypagerules var",
-					"source_branch var",
-					"source_page var",
-					"dest_branch var",
-					"dest_page var",
-					"data var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CopyPage_Copy_Template",
-				"parameters": [
-					"copypagerules var",
-					"source_branch var",
-					"source_page var",
-					"dest_branch var",
-					"dest_page var",
-					"data var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CopyPage_Copy_Cacheset",
-				"parameters": [
-					"copypagerules var",
-					"source_branch var",
-					"source_page var",
-					"dest_branch var",
-					"dest_page var",
-					"data var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CopyPage_Copy_Public",
-				"parameters": [
-					"copypagerules var",
-					"source_branch var",
-					"source_page var",
-					"dest_branch var",
-					"dest_page var",
-					"data var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CopyPage_Copy_JavaScript",
-				"parameters": [
-					"copypagerules var",
-					"source_branch var",
-					"source_page var",
-					"dest_branch var",
-					"dest_page var",
-					"data var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CopyPage_Copy_CSS",
-				"parameters": [
-					"copypagerules var",
-					"source_branch var",
-					"source_page var",
-					"dest_branch var",
-					"dest_page var",
-					"data var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "GenerateUniqueJavaScriptResourceCode_FromFilePath",
-				"parameters": [
-					"path",
-					"code var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "GenerateUniqueJavaScriptResourceCode_FromCode",
-				"parameters": [
-					"base_resource_code",
-					"code var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "GenerateUniqueCSSResourceCode_FromFilePath",
-				"parameters": [
-					"path",
-					"code var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "GenerateBranchlessUniqueManagedTemplateFilename_FromFilename",
-				"parameters": [
-					"filename"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "JavaScriptResource_Default_Attributes",
-				"parameters": [
-					"type",
-					"attributes var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "CSSResource_Default_Attributes",
-				"parameters": [
-					"type",
-					"attributes var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "ManagedContent_Generate_SRI_Attributes",
-				"parameters": [
-					"content_id",
-					"attributes var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "ImageFilePath_StripImageRoot",
-				"parameters": [
-					"file_path"
+					"skin_dir",
+					"control var"
 				],
 				"returnValue": "l.void"
 			}
@@ -33217,6 +34646,11 @@
 					"urisettings var",
 					"uri"
 				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "URI_Route_JSON",
+				"parameters": [],
 				"returnValue": "l.void"
 			},
 			{
@@ -34308,6 +35742,15 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "WishListItem_Update_Child_Quantity",
+				"parameters": [
+					"parent_wishlistitem var",
+					"original_quantity",
+					"quantity"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "WishListItem_Update_WishList",
 				"parameters": [
 					"wish_id",
@@ -34375,6 +35818,13 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "WishListItem_Delete_Children",
+				"parameters": [
+					"wishlistitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "WishListItem_Delete_LowLevel",
 				"parameters": [
 					"id"
@@ -34393,6 +35843,15 @@
 				"name": "WishListItemList_Load_WishList",
 				"parameters": [
 					"wshlst_id",
+					"wishlistitems var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "WishListItemList_Load_Parent",
+				"parameters": [
+					"wshlst_id",
+					"parent_id",
 					"wishlistitems var"
 				],
 				"returnValue": "l.count"
@@ -34461,10 +35920,28 @@
 				"returnValue": "l.count"
 			},
 			{
+				"name": "Runtime_WishListProductList_Load_Parent",
+				"parameters": [
+					"wshlst_id",
+					"parent_id",
+					"wishlistitems var"
+				],
+				"returnValue": "l.count"
+			},
+			{
 				"name": "Runtime_WishListProduct_Count_WishList",
 				"parameters": [
 					"wshlst_id",
 					"count var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "WishListItemQuantity_Load_Customer_And_Product",
+				"parameters": [
+					"cust_id",
+					"product_id",
+					"quantity var"
 				],
 				"returnValue": "l.void"
 			},
@@ -34510,6 +35987,69 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "Runtime_WishListItemList_Process_AppendItem_Insert",
+				"parameters": [
+					"destination_wishlist var",
+					"wishlistitem var",
+					"items var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Runtime_WishListItemList_Process_AppendItem_Insert_WithChildren",
+				"parameters": [
+					"destination_wishlist var",
+					"wishlistitem var",
+					"child_items var",
+					"child_item_count",
+					"items var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Runtime_WishListList_Process_AppendItem_Update",
+				"parameters": [
+					"original_wishlistitem var",
+					"wishlistitem var",
+					"items var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Runtime_WishListItemList_Process_AppendItem_Delete",
+				"parameters": [
+					"wishlistitem var",
+					"items var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Runtime_WishListItemList_Process_Items",
+				"parameters": [
+					"items var",
+					"item_count var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Runtime_WishListItem_Module_Validate_Children",
+				"parameters": [
+					"item var",
+					"rt_wishlistitem_modules var",
+					"rt_wishlistitem_module_count"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Runtime_WishListItem_Process_Children",
+				"parameters": [
+					"item var",
+					"rt_wishlistitem_modules var",
+					"rt_wishlistitem_module_count"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "Action_AddProductToWishList",
 				"parameters": [],
 				"returnValue": "l.void"
@@ -34525,12 +36065,29 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "Action_AddProductFromWishList_LowLevel",
+				"name": "AddProductFromWishList_Prepare_Items",
 				"parameters": [
 					"wishlistitem var",
 					"product var",
 					"subterm_id",
-					"quantity"
+					"quantity",
+					"items var",
+					"item_count var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "AddProductFromWishList_Prepare_Items_LowLevel",
+				"parameters": [
+					"wishlistitem var",
+					"product var",
+					"variant_id",
+					"subterm_id",
+					"quantity",
+					"group_id",
+					"options var",
+					"option_count",
+					"basketitem var"
 				],
 				"returnValue": "l.void"
 			},
@@ -34566,6 +36123,16 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "WishListItemAndOptions_Insert",
+				"parameters": [
+					"wishlist var",
+					"wishlistitem var",
+					"options var",
+					"option_count"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "Action_WishList_Insert",
 				"parameters": [],
 				"returnValue": "l.void"
@@ -34578,6 +36145,36 @@
 			{
 				"name": "Action_WishList_Delete",
 				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Runtime_BasketItemListMoveToWishList_Process",
+				"parameters": [
+					"wishlist var",
+					"items var",
+					"item_count"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "WishListItem_Build_Attribute_Lookup",
+				"parameters": [
+					"options var",
+					"option_count",
+					"lookup var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "WishListItem_DetermineVariant",
+				"parameters": [
+					"product var",
+					"product_attributes var",
+					"product_attribute_count",
+					"options var",
+					"option_count",
+					"variant_id var"
+				],
 				"returnValue": "l.void"
 			}
 		]
@@ -34953,6 +36550,16 @@
 				"name": "JSON_ChildCategoryList_DisplayOrder_Update",
 				"parameters": [],
 				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_CategoryPriceGroupList_Load_Query",
+				"parameters": [],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "JSON_CategoryAvailabilityGroupList_Load_Query",
+				"parameters": [],
+				"returnValue": "l.count"
 			}
 		]
 	},
@@ -35039,11 +36646,6 @@
 		"functions": [
 			{
 				"name": "JSON_MMTextEditor_FontSizeList_Load_All",
-				"parameters": [],
-				"returnValue": "l.count"
-			},
-			{
-				"name": "JSON_MMTextEditor_FontFamilyList_Load_All",
 				"parameters": [],
 				"returnValue": "l.count"
 			}
@@ -36609,6 +38211,11 @@
 				"description": "Product Price Groups"
 			},
 			{
+				"name": "JSON_ProductAvailabilityGroupList_Load_Query",
+				"parameters": [],
+				"returnValue": "l.count"
+			},
+			{
 				"name": "JSON_ProductShippingRules_Update",
 				"parameters": [],
 				"returnValue": "l.void",
@@ -37091,6 +38698,28 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "JSON_Runtime_BasketItem_Insert",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Runtime_BasketItemList_Insert",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Runtime_BasketItemList_Insert_ProcessProduct",
+				"parameters": [
+					"field_prefix",
+					"product var",
+					"items var",
+					"item_count var",
+					"errors var",
+					"error_count var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "JSON_Runtime_BasketItem_Update",
 				"parameters": [],
 				"returnValue": "l.void"
@@ -37164,6 +38793,13 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "JSON_Runtime_BasketCharge",
+				"parameters": [
+					"basketcharge var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "JSON_Runtime_InitiateCheckout",
 				"parameters": [],
 				"returnValue": "l.void",
@@ -37230,6 +38866,14 @@
 					"customfield_state var"
 				],
 				"returnValue": "l.count"
+			},
+			{
+				"name": "JSON_Runtime_Category_Fragments",
+				"parameters": [
+					"json_category var",
+					"data var"
+				],
+				"returnValue": "l.void"
 			},
 			{
 				"name": "JSON_Runtime_CategoryList_OrderByColumns",
@@ -37328,6 +38972,14 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "JSON_Runtime_Product_Load_Element",
+				"parameters": [
+					"input_element var",
+					"product var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "JSON_Runtime_ProductList_Build_Query",
 				"parameters": [
 					"search_query var"
@@ -37375,9 +39027,8 @@
 			{
 				"name": "JSON_Runtime_ProductList_Facets",
 				"parameters": [
-					"query var",
-					"enabled_facets var",
-					"enabled_facet_count"
+					"facets_with_values var",
+					"facets_with_values_count"
 				],
 				"returnValue": "l.void"
 			},
@@ -37390,6 +39041,14 @@
 			},
 			{
 				"name": "JSON_Runtime_Product_Read",
+				"parameters": [
+					"product var",
+					"data var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Runtime_Product_Read_AddVariantAttributePriceAndWeight",
 				"parameters": [
 					"product var",
 					"data var"
@@ -37547,6 +39206,94 @@
 					"script var"
 				],
 				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Runtime_Customer_Login",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Runtime_WishList",
+				"parameters": [
+					"wishlist var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Runtime_WishListItem_OnDemandColumns",
+				"parameters": [
+					"wishlistitem var",
+					"ondemandcolumns var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Runtime_WishList_Insert",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Runtime_WishListList_Load_Query",
+				"parameters": [],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "JSON_Runtime_WishListItemList_Insert",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Runtime_WishListItemList_Insert_ProcessProduct",
+				"parameters": [
+					"field_prefix",
+					"wishlist var",
+					"product var",
+					"items var",
+					"item_count var",
+					"errors var",
+					"error_count var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Runtime_WishListItemList_Load_Query",
+				"parameters": [],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "JSON_Runtime_WishListItem_Delete",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Runtime_BasketItemList_MoveToWishlist",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Runtime_WishList_ValidateDestination",
+				"parameters": [
+					"wishlist var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Runtime_WishList_Load",
+				"parameters": [
+					"wishlist var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "JSON_Runtime_WishListItemList_Load_Query_Filter",
+				"parameters": [
+					"query var",
+					"field_count var",
+					"filter_name",
+					"filter_value",
+					"data var"
+				],
+				"returnValue": "l.count"
 			}
 		]
 	},
@@ -38816,6 +40563,96 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "BasketItem_Insert",
+				"parameters": [
+					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "BasketItemAndOptions_Insert",
+				"parameters": [
+					"basketitem var",
+					"basketoptions var",
+					"basketoption_count"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "BasketItem_Update",
+				"parameters": [
+					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "v10_BasketItem_Update",
+				"parameters": [
+					"original_basketitem var",
+					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "BasketItem_Update_Pricing",
+				"parameters": [
+					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "v10_BasketItem_Update_Pricing",
+				"parameters": [
+					"original_basketitem var",
+					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "BasketItem_Update_Tax",
+				"parameters": [
+					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "v10_BasketItem_Update_Tax",
+				"parameters": [
+					"original_basketitem var",
+					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "BasketItem_Increment_Quantity",
+				"parameters": [
+					"line_id",
+					"quantity"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "BasketItem_Delete",
+				"parameters": [
+					"line_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "v10_BasketItem_Delete",
+				"parameters": [
+					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "BasketItem_Delete_LowLevel",
+				"parameters": [
+					"line_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "BasketItem_Total",
 				"parameters": [
 					"basket_id"
@@ -38956,13 +40793,6 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "BasketItem_Delete",
-				"parameters": [
-					"line_id"
-				],
-				"returnValue": "l.void"
-			},
-			{
 				"name": "Basket_Reset_Tax",
 				"parameters": [
 					"basket_id"
@@ -38985,6 +40815,102 @@
 				"name": "Basket_Is_Empty",
 				"parameters": [
 					"basket var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "BasketOption_Insert",
+				"parameters": [
+					"basketoption var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "v10_BasketOption_Insert",
+				"parameters": [
+					"basketitem var",
+					"basketoption var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "BasketOption_Update",
+				"parameters": [
+					"basketoption var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "v10_BasketOption_Update",
+				"parameters": [
+					"basketitem var",
+					"original_basketoption var",
+					"basketoption var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "BasketOption_Update_Pricing",
+				"parameters": [
+					"basketoption var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "v10_BasketOption_Update_Pricing",
+				"parameters": [
+					"basketitem var",
+					"original_basketoption var",
+					"basketoption var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "BasketOption_Delete",
+				"parameters": [
+					"id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "v10_BasketOption_Delete",
+				"parameters": [
+					"basketitem var",
+					"basketoption var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "BasketItemList_Load_Basket_Summary",
+				"parameters": [
+					"basket_id",
+					"basketitems var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "BasketItem_Recalculate_Total",
+				"parameters": [
+					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "BasketItem_NotifyList_Append_Insert",
+				"parameters": [
+					"basketitem var",
+					"notify_items var",
+					"notify_item_count var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "BasketItem_NotifyList_Append_Update",
+				"parameters": [
+					"original_basketitem var",
+					"basketitem var",
+					"notify_items var",
+					"notify_item_count var"
 				],
 				"returnValue": "l.void"
 			}
@@ -40027,6 +41953,13 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "OrderInfo_InsertOrUpdate",
+				"parameters": [
+					"orderinfo var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "OrderItem_Copy_Basket",
 				"parameters": [
 					"basket var"
@@ -40210,11 +42143,46 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "OrderItem_Update_Parent",
+				"parameters": [
+					"original_orderitem var",
+					"orderitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "OrderItem_Update_Child_Quantity",
+				"parameters": [
+					"parent_orderitem var",
+					"original_quantity",
+					"quantity"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "OrderItemList_Update_Status",
 				"parameters": [
 					"orderitem_count",
 					"original_orderitems var",
 					"orderitems var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "OrderItem_Split",
+				"parameters": [
+					"orderitem var",
+					"quantity",
+					"split_orderitem_original var",
+					"split_orderitem_new var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "OrderItem_Split_Children",
+				"parameters": [
+					"split_orderitem_original var",
+					"split_orderitem_new var"
 				],
 				"returnValue": "l.void"
 			},
@@ -40316,6 +42284,13 @@
 					"orderitems var",
 					"products var",
 					"variant_ids var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "OrderItem_Delete_Children",
+				"parameters": [
+					"orderitem var"
 				],
 				"returnValue": "l.void"
 			},
@@ -40502,6 +42477,36 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "OrderItem_Update",
+				"parameters": [
+					"orderitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "v10_OrderItem_Update",
+				"parameters": [
+					"original_orderitem var",
+					"orderitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "OrderItem_Update_Pricing",
+				"parameters": [
+					"orderitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "v10_OrderItem_Update_Pricing",
+				"parameters": [
+					"original_orderitem var",
+					"orderitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "v56_OrderItem_Update",
 				"parameters": [
 					"original_orderitem var",
@@ -40514,9 +42519,64 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "OrderOption_Insert",
+				"parameters": [
+					"orderoption var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "v10_OrderOption_Insert",
+				"parameters": [
+					"orderitem var",
+					"orderoption var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "v10_OrderOption_Update",
+				"parameters": [
+					"orderitem var",
+					"original_orderoption var",
+					"orderoption var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "OrderShipment_Delete",
 				"parameters": [
 					"shpmnt_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "OrderOption_Update_Pricing",
+				"parameters": [
+					"orderoption var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "v10_OrderOption_Update_Pricing",
+				"parameters": [
+					"orderitem var",
+					"original_orderoption var",
+					"orderoption var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "OrderOption_Delete",
+				"parameters": [
+					"id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "v10_OrderOption_Delete",
+				"parameters": [
+					"orderitem var",
+					"orderoption var"
 				],
 				"returnValue": "l.void"
 			},
@@ -40582,6 +42642,21 @@
 				"name": "Order_Reset_Tax",
 				"parameters": [
 					"order_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "OrderItemList_Load_Order_Summary",
+				"parameters": [
+					"order_id",
+					"orderitems var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "OrderItem_Recalculate_Total",
+				"parameters": [
+					"orderitem var"
 				],
 				"returnValue": "l.void"
 			}
@@ -41745,11 +43820,34 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "Runtime_BasketItemAndOptions_Insert",
+				"parameters": [
+					"product var",
+					"basketitem var",
+					"basketoptions var",
+					"basketoption_count"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "Runtime_BasketItem_Update",
 				"parameters": [
 					"product var",
 					"original_basketitem var",
 					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Runtime_BasketItemAndOptions_Update",
+				"parameters": [
+					"product var",
+					"original_basketitem var",
+					"original_basketoptions var",
+					"original_basketoption_count",
+					"basketitem var",
+					"basketoptions var",
+					"basketoption_count"
 				],
 				"returnValue": "l.void"
 			},
@@ -41777,11 +43875,44 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "Runtime_BasketItem_Delete_Children",
+				"parameters": [
+					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "Runtime_BasketItem_Increment_Quantity",
 				"parameters": [
 					"product var",
 					"basketitem var",
 					"quantity"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Runtime_BasketItemList_Check_Available_Inventory",
+				"parameters": [
+					"items var",
+					"item_count"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Runtime_BasketItemList_Is_Available_Inventory",
+				"parameters": [
+					"items var",
+					"item_count"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Runtime_BasketItemList_Is_Available_Inventory_Filter",
+				"parameters": [
+					"items var",
+					"item_count",
+					"filtered_items var",
+					"filtered_item_count var"
 				],
 				"returnValue": "l.void"
 			},
@@ -41794,10 +43925,47 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "Runtime_BasketItemList_Process_Items",
+				"parameters": [
+					"items var",
+					"item_count var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Runtime_BasketItem_Module_Validate_Children",
+				"parameters": [
+					"item var",
+					"rt_basketitem_modules var",
+					"rt_basketitem_module_count"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Runtime_BasketItem_Process_Children",
+				"parameters": [
+					"item var",
+					"rt_basketitem_modules var",
+					"rt_basketitem_module_count"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "Runtime_BasketItemList_Process_AppendItem_Insert",
 				"parameters": [
 					"product var",
 					"basketitem var",
+					"items var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Runtime_BasketItemList_Process_AppendItem_Insert_WithChildren",
+				"parameters": [
+					"product var",
+					"basketitem var",
+					"child_items var",
+					"child_item_count",
 					"items var"
 				],
 				"returnValue": "l.void"
@@ -42110,6 +44278,61 @@
 				],
 				"returnValue": "l.void",
 				"description": "Runtime Product List: Search (including searchable custom fields)"
+			},
+			{
+				"name": "Runtime_ProductList_Build_Query_Search_Relational",
+				"parameters": [
+					"query var",
+					"search"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Runtime_ProductList_Build_Query_Search_AI",
+				"parameters": [
+					"query var",
+					"search",
+					"index var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Runtime_ProductList_Cache_AI_Search",
+				"parameters": [
+					"searchsettings var",
+					"search",
+					"index var",
+					"cachedproductlist var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Runtime_ProductList_Cache_AI_Search_LowLevel",
+				"parameters": [
+					"searchsettings var",
+					"cachedproductlist var",
+					"search var",
+					"index var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Runtime_ProductList_Build_Query_AISearchIndex_Relational",
+				"parameters": [
+					"query var",
+					"search var",
+					"index var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Runtime_ProductList_Cache_AI_Search_Relational",
+				"parameters": [
+					"cachedproductlist var",
+					"search var",
+					"index var"
+				],
+				"returnValue": "l.void"
 			},
 			{
 				"name": "Runtime_ProductList_Build_Query_Search_FROM",
@@ -43514,13 +45737,6 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "BasketItem_Insert",
-				"parameters": [
-					"basketitem var"
-				],
-				"returnValue": "l.void"
-			},
-			{
 				"name": "BasketItem_Insert_LowLevel",
 				"parameters": [
 					"basketitem var"
@@ -43528,28 +45744,28 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "BasketItem_Update",
+				"name": "BasketItem_Update_LowLevel",
 				"parameters": [
 					"basketitem var"
 				],
 				"returnValue": "l.void"
 			},
 			{
-				"name": "BasketItem_Update_Pricing",
+				"name": "BasketItem_Update_Pricing_LowLevel",
 				"parameters": [
 					"basketitem var"
 				],
 				"returnValue": "l.void"
 			},
 			{
-				"name": "BasketItem_Update_Tax",
+				"name": "BasketItem_Update_Tax_LowLevel",
 				"parameters": [
 					"basketitem var"
 				],
 				"returnValue": "l.void"
 			},
 			{
-				"name": "BasketItem_Increment_Quantity",
+				"name": "BasketItem_Increment_Quantity_LowLevel",
 				"parameters": [
 					"line_id",
 					"quantity"
@@ -43560,6 +45776,14 @@
 				"name": "BasketItem_Load_Line",
 				"parameters": [
 					"basket_id",
+					"line_id",
+					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "BasketItem_Load_Line_ID",
+				"parameters": [
 					"line_id",
 					"basketitem var"
 				],
@@ -43628,6 +45852,15 @@
 				"name": "BasketItemList_Load_Upsold",
 				"parameters": [
 					"basket_id",
+					"basketitems var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "BasketItemList_Load_Parent",
+				"parameters": [
+					"basket_id",
+					"parent_id",
 					"basketitems var"
 				],
 				"returnValue": "l.count"
@@ -43724,21 +45957,21 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "BasketOption_Insert",
+				"name": "BasketOption_Insert_LowLevel",
 				"parameters": [
 					"basketoption var"
 				],
 				"returnValue": "l.void"
 			},
 			{
-				"name": "BasketOption_Update",
+				"name": "BasketOption_Update_LowLevel",
 				"parameters": [
 					"basketoption var"
 				],
 				"returnValue": "l.void"
 			},
 			{
-				"name": "BasketOption_Update_Pricing",
+				"name": "BasketOption_Update_Pricing_LowLevel",
 				"parameters": [
 					"basketoption var"
 				],
@@ -43753,7 +45986,15 @@
 				"returnValue": "l.count"
 			},
 			{
-				"name": "BasketOption_Delete",
+				"name": "BasketOption_Load_ID",
+				"parameters": [
+					"id",
+					"basketoption var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "BasketOption_Delete_LowLevel",
 				"parameters": [
 					"id"
 				],
@@ -45247,14 +47488,22 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "OrderItem_Update",
+				"name": "OrderItem_Update_LowLevel",
 				"parameters": [
 					"orderitem var"
 				],
 				"returnValue": "l.void"
 			},
 			{
-				"name": "OrderItem_Update_Pricing",
+				"name": "OrderItem_Increment_Quantity_LowLevel",
+				"parameters": [
+					"line_id",
+					"quantity"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "OrderItem_Update_Pricing_LowLevel",
 				"parameters": [
 					"orderitem var"
 				],
@@ -45275,6 +47524,13 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "OrderItem_Update_Parent_LowLevel",
+				"parameters": [
+					"orderitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "OrderItemList_Load_ProductID",
 				"parameters": [
 					"order_id",
@@ -45287,6 +47543,14 @@
 				"name": "OrderItem_Load_Line",
 				"parameters": [
 					"order_id",
+					"line_id",
+					"orderitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "OrderItem_Load_Line_ID",
+				"parameters": [
 					"line_id",
 					"orderitem var"
 				],
@@ -45320,6 +47584,15 @@
 				"name": "OrderItemList_Load_Return",
 				"parameters": [
 					"rma_id",
+					"orderitems var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "OrderItemList_Load_Parent",
+				"parameters": [
+					"order_id",
+					"parent_id",
 					"orderitems var"
 				],
 				"returnValue": "l.count"
@@ -45428,7 +47701,14 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "OrderOption_Insert",
+				"name": "OrderOption_Insert_LowLevel",
+				"parameters": [
+					"orderoption var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "OrderOption_Update_LowLevel",
 				"parameters": [
 					"orderoption var"
 				],
@@ -45445,7 +47725,7 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "OrderOption_Update_Pricing",
+				"name": "OrderOption_Update_Pricing_LowLevel",
 				"parameters": [
 					"orderoption var"
 				],
@@ -45458,6 +47738,21 @@
 					"orderoptions var"
 				],
 				"returnValue": "l.count"
+			},
+			{
+				"name": "OrderOption_Load_ID",
+				"parameters": [
+					"id",
+					"orderoption var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "OrderOption_Delete_LowLevel",
+				"parameters": [
+					"id"
+				],
+				"returnValue": "l.void"
 			},
 			{
 				"name": "OrderOption_Delete_All_Order",
@@ -48517,6 +50812,17 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "DrawMMWeightInput",
+				"parameters": [
+					"name",
+					"value",
+					"title",
+					"autosize",
+					"autosize_max"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "DrawRadio",
 				"parameters": [
 					"name",
@@ -49504,6 +51810,33 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "Image_Dimensions_AVIF",
+				"parameters": [
+					"filepath",
+					"location",
+					"width var",
+					"height var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Image_Dimensions_AVIF_GoTo_Box",
+				"parameters": [
+					"find_box_code",
+					"binary var",
+					"pos var",
+					"end_pos var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Image_Dimensions_AVIF_Bytes_To_Int32",
+				"parameters": [
+					"bytes"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "Image_ResizeIntoBoundingBox_gdImage",
 				"parameters": [
 					"source_gdimage var",
@@ -50053,6 +52386,37 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "Price_Pad",
+				"parameters": [
+					"price"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Decimal_Pad",
+				"parameters": [
+					"value",
+					"digits"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Format_Weight",
+				"parameters": [
+					"weight"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Convert_Weight",
+				"parameters": [
+					"weight",
+					"from_unit",
+					"to_unit"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "DummyBasket_Create",
 				"parameters": [
 					"order var",
@@ -50109,6 +52473,21 @@
 				"parameters": [
 					"order var",
 					"params var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Round_Item_Total",
+				"parameters": [
+					"price"
+				],
+				"returnValue": "l.void",
+				"description": "High Precision Pricing Helper Functions"
+			},
+			{
+				"name": "Price_IsHighPrecision",
+				"parameters": [
+					"price"
 				],
 				"returnValue": "l.void"
 			}
@@ -50644,6 +53023,15 @@
 				"description": "JSON_Input_xxx: Validate a parameter and return its result given the specified criteria"
 			},
 			{
+				"name": "JSON_Input_Weight",
+				"parameters": [
+					"required",
+					"param",
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "JSON_Input_Filter",
 				"parameters": [
 					"required",
@@ -50685,8 +53073,8 @@
 					"required",
 					"param",
 					"output var",
-					"scale",
-					"precision"
+					"precision",
+					"scale"
 				],
 				"returnValue": "l.void"
 			},
@@ -50702,6 +53090,25 @@
 			{
 				"name": "JSON_Input_Currency",
 				"parameters": [
+					"required",
+					"param",
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Input_Price",
+				"parameters": [
+					"required",
+					"param",
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Input_Element_Price",
+				"parameters": [
+					"element var",
 					"required",
 					"param",
 					"output var"
@@ -50746,8 +53153,8 @@
 					"param",
 					"output var",
 					"output_count var",
-					"scale",
-					"precision"
+					"precision",
+					"scale"
 				],
 				"returnValue": "l.void"
 			},
@@ -50860,8 +53267,8 @@
 					"required",
 					"param",
 					"output var",
-					"scale",
-					"precision"
+					"precision",
+					"scale"
 				],
 				"returnValue": "l.void"
 			},
@@ -50893,8 +53300,8 @@
 					"param",
 					"output var",
 					"output_count var",
-					"scale",
-					"precision"
+					"precision",
+					"scale"
 				],
 				"returnValue": "l.void"
 			},
@@ -50921,6 +53328,16 @@
 			},
 			{
 				"name": "JSON_Input_Element_DateTime",
+				"parameters": [
+					"element var",
+					"required",
+					"param",
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_Input_Element_Weight",
 				"parameters": [
 					"element var",
 					"required",
@@ -63561,58 +65978,6 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "Module_Install_Store",
-				"parameters": [
-					"module var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Upgrade_Store",
-				"parameters": [
-					"module var",
-					"version"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Uninstall_Store",
-				"parameters": [
-					"module var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Store_Validate",
-				"parameters": [
-					"module var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Store_Update",
-				"parameters": [
-					"module var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Store_Tabs",
-				"parameters": [
-					"module var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Store_Content",
-				"parameters": [
-					"module var",
-					"tab",
-					"load_fields"
-				],
-				"returnValue": "l.void"
-			},
-			{
 				"name": "ComponentModule_Tabs",
 				"parameters": [
 					"module var",
@@ -65826,6 +68191,42 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "FlexItemSettings_Extend_Defaults_Property_BorderThickness",
+				"parameters": [
+					"property var",
+					"property_defaults var",
+					"property_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "FlexItemSettings_Extend_Defaults_Property_Button",
+				"parameters": [
+					"property var",
+					"property_defaults var",
+					"property_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "FlexItemSettings_Extend_Defaults_Property_CornerRadius",
+				"parameters": [
+					"property var",
+					"property_defaults var",
+					"property_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "FlexItemSettings_Extend_Defaults_Property_DropShadow",
+				"parameters": [
+					"property var",
+					"property_defaults var",
+					"property_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "FlexItemSettings_Extend_Defaults_Property_Radio",
 				"parameters": [
 					"property var",
@@ -65898,6 +68299,78 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "FlexItemSettings_Extend_Defaults_TextSettings",
+				"parameters": [
+					"property var",
+					"property_defaults var",
+					"property_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "FlexItemSettings_Extend_Defaults_TextSettings_BorderThickness",
+				"parameters": [
+					"field var",
+					"field_defaults var",
+					"field_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "FlexItemSettings_Extend_Defaults_TextSettings_Button",
+				"parameters": [
+					"field var",
+					"field_defaults var",
+					"field_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "FlexItemSettings_Extend_Defaults_TextSettings_CornerRadius",
+				"parameters": [
+					"field var",
+					"field_defaults var",
+					"field_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "FlexItemSettings_Extend_Defaults_TextSettings_DropShadow",
+				"parameters": [
+					"field var",
+					"field_defaults var",
+					"field_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "FlexItemSettings_Extend_Defaults_TextSettings_LengthUnit",
+				"parameters": [
+					"field var",
+					"field_defaults var",
+					"field_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "FlexItemSettings_Extend_Defaults_TextSettings_Padding",
+				"parameters": [
+					"field var",
+					"field_defaults var",
+					"field_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "FlexItemSettings_Extend_Defaults_TextSettings_Typography",
+				"parameters": [
+					"field var",
+					"field_defaults var",
+					"field_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "FlexItemSettings_Extend_Defaults_Property_TextEditor",
 				"parameters": [
 					"property var",
@@ -65908,6 +68381,24 @@
 			},
 			{
 				"name": "FlexItemSettings_Extend_Defaults_Property_Image",
+				"parameters": [
+					"property var",
+					"property_defaults var",
+					"property_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "FlexItemSettings_Extend_Defaults_Property_LengthUnit",
+				"parameters": [
+					"property var",
+					"property_defaults var",
+					"property_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "FlexItemSettings_Extend_Defaults_Property_Padding",
 				"parameters": [
 					"property var",
 					"property_defaults var",
@@ -65944,6 +68435,24 @@
 			},
 			{
 				"name": "FlexItemSettings_Extend_Defaults_Property_CustomLookup",
+				"parameters": [
+					"property var",
+					"property_defaults var",
+					"property_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "FlexItemSettings_Extend_Defaults_Property_Font",
+				"parameters": [
+					"property var",
+					"property_defaults var",
+					"property_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "FlexItemSettings_Extend_Defaults_Property_Typography",
 				"parameters": [
 					"property var",
 					"property_defaults var",
@@ -66041,6 +68550,54 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "ComponentModule_Initialize_JSON_Callback_Property_BorderThickness",
+				"parameters": [
+					"property_settings var",
+					"property var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_JSON_Callback_Property_Breakpoint",
+				"parameters": [
+					"property_settings var",
+					"property var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_JSON_Callback_Property_Button",
+				"parameters": [
+					"property_settings var",
+					"property var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_JSON_Callback_Property_Button_LowLevel",
+				"parameters": [
+					"settings var",
+					"property_or_field var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_JSON_Callback_Property_CornerRadius",
+				"parameters": [
+					"property_settings var",
+					"property var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_JSON_Callback_Property_DropShadow",
+				"parameters": [
+					"property_settings var",
+					"property var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "ComponentModule_Initialize_JSON_Callback_Property_Radio",
 				"parameters": [
 					"property_settings var",
@@ -66121,6 +68678,22 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "ComponentModule_Initialize_JSON_Callback_Property_LengthUnit",
+				"parameters": [
+					"property_settings var",
+					"property var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_JSON_Callback_Property_Padding",
+				"parameters": [
+					"property_settings var",
+					"property var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "ComponentModule_Initialize_JSON_Callback_Property_Product",
 				"parameters": [
 					"property_settings var",
@@ -66149,6 +68722,30 @@
 				"parameters": [
 					"property_settings var",
 					"property var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_JSON_Callback_Property_Font",
+				"parameters": [
+					"property_settings var",
+					"property var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_JSON_Callback_Property_Typography",
+				"parameters": [
+					"property_settings var",
+					"property var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_JSON_Callback_Property_Typography_LowLevel",
+				"parameters": [
+					"settings var",
+					"property_or_field var"
 				],
 				"returnValue": "l.void"
 			},
@@ -66217,13 +68814,133 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "ComponentModule_Initialize_JSON_Output_Overwrite",
+				"parameters": [
+					"field",
+					"output var",
+					"output_separator var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_JSON_Output_Optional_Font",
+				"parameters": [
+					"field",
+					"output var",
+					"output_separator var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_JSON_Output_Optional_Inline_Font",
+				"parameters": [
+					"output var",
+					"output_separator var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_JSON_Output_Optional_Font_LowLevel",
+				"parameters": [
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_JSON_Output_Optional_Boolean",
+				"parameters": [
+					"field",
+					"output var",
+					"output_separator var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_JSON_Output_Optional_Value",
+				"parameters": [
+					"field",
+					"output var",
+					"output_separator var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_JSON_Output_Optional_LengthUnit",
+				"parameters": [
+					"field",
+					"output var",
+					"output_separator var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_JSON_Output_Optional_Inline_LengthUnit",
+				"parameters": [
+					"output var",
+					"output_separator var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_JSON_Output_Optional_LengthUnit_LowLevel",
+				"parameters": [
+					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "ComponentModule_Initialize_Properties",
 				"parameters": [
 					"module var",
 					"item",
 					"all_settings var",
 					"settings var",
-					"properties var"
+					"properties var",
+					"path_prefix"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_Breakpoint",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"property_path_prefix",
+					"property var",
+					"property_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_Button",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"property_path_prefix",
+					"property var",
+					"property_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_Button_Customizations_Enabled",
+				"parameters": [
+					"property_or_field var",
+					"settings var",
+					"theme var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_Button_Stylesheet_Callback",
+				"parameters": [
+					"settings var",
+					"member",
+					"data var"
 				],
 				"returnValue": "l.void"
 			},
@@ -66234,6 +68951,7 @@
 					"item",
 					"all_settings var",
 					"settings var",
+					"property_path_prefix",
 					"property var",
 					"property_settings var"
 				],
@@ -66246,8 +68964,191 @@
 					"item",
 					"all_settings var",
 					"settings var",
+					"property_path_prefix",
 					"property var",
 					"property_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_TextSettings_BorderThickness",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"field_path_prefix",
+					"field var",
+					"field_settings var",
+					"styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_TextSettings_Breakpoint",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"field_path_prefix",
+					"field var",
+					"field_settings var",
+					"styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_TextSettings_Button",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"field_path_prefix",
+					"field var",
+					"field_settings var",
+					"styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_TextSettings_Text",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"field_path_prefix",
+					"field var",
+					"field_settings var",
+					"styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_TextSettings_Select",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"field_path_prefix",
+					"field var",
+					"field_settings var",
+					"styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_TextSettings_Selector",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"field_path_prefix",
+					"field var",
+					"field_settings var",
+					"styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_TextSettings_Color",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"field_path_prefix",
+					"field var",
+					"field_settings var",
+					"styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_TextSettings_CornerRadius",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"field_path_prefix",
+					"field var",
+					"field_settings var",
+					"styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_TextSettings_DropShadow",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"field_path_prefix",
+					"field var",
+					"field_settings var",
+					"styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_TextSettings_Font",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"field_path_prefix",
+					"field var",
+					"field_settings var",
+					"styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_TextSettings_LengthUnit",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"field_path_prefix",
+					"field var",
+					"field_settings var",
+					"styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_TextSettings_Padding",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"field_path_prefix",
+					"field var",
+					"field_settings var",
+					"styles var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_TextSettings_Typography",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"field_path_prefix",
+					"field var",
+					"field_settings var",
+					"styles var"
 				],
 				"returnValue": "l.void"
 			},
@@ -66258,6 +69159,7 @@
 					"item",
 					"all_settings var",
 					"settings var",
+					"property_path_prefix",
 					"property_settings var"
 				],
 				"returnValue": "l.void"
@@ -66269,7 +69171,51 @@
 					"item",
 					"all_settings var",
 					"settings var",
+					"property_path_prefix",
 					"property_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_Font",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"property_path_prefix",
+					"property_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_Typography",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"property_path_prefix",
+					"property var",
+					"property_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_Typography_Customizations_Enabled",
+				"parameters": [
+					"property_or_field var",
+					"settings var",
+					"theme var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_Typography_Stylesheet_Callback",
+				"parameters": [
+					"settings var",
+					"member",
+					"data var"
 				],
 				"returnValue": "l.void"
 			},
@@ -66280,8 +69226,18 @@
 					"item",
 					"all_settings var",
 					"settings var",
+					"property_path_prefix",
 					"property var",
 					"property_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_Image_Image_Dimensions",
+				"parameters": [
+					"image var",
+					"width var",
+					"height var"
 				],
 				"returnValue": "l.void"
 			},
@@ -66292,6 +69248,7 @@
 					"item",
 					"all_settings var",
 					"settings var",
+					"property_path_prefix",
 					"property_settings var"
 				],
 				"returnValue": "l.void"
@@ -66446,6 +69403,71 @@
 					"module var",
 					"item",
 					"output var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "SkinsComponentModule_Export_Item_FlexItem_Images",
+				"parameters": [
+					"managedproperty var",
+					"flex_item var",
+					"image_lookup var",
+					"images var",
+					"image_count var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "SkinsComponentModule_Export_Item_FlexItem_FindImages",
+				"parameters": [
+					"properties var",
+					"settings var",
+					"image_lookup var",
+					"images var",
+					"image_count var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "SkinsComponentModule_Export_Item_FlexItem_FindImages_Property_Image",
+				"parameters": [
+					"property var",
+					"property_settings var",
+					"image_lookup var",
+					"images var",
+					"image_count var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "SkinsComponentModule_Export_Item_FlexItem_FindImages_Property_Group",
+				"parameters": [
+					"property var",
+					"property_settings var",
+					"image_lookup var",
+					"images var",
+					"image_count var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "SkinsComponentModule_Export_Item_FlexItem_FindImages_Property_List",
+				"parameters": [
+					"property var",
+					"property_settings var",
+					"image_lookup var",
+					"images var",
+					"image_count var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "SkinsComponentModule_Export_Item_FlexItem_FindImages_AppendImage",
+				"parameters": [
+					"image",
+					"image_lookup var",
+					"images var",
+					"image_count var"
 				],
 				"returnValue": "l.void"
 			},
@@ -66760,6 +69782,14 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "Module_Provision_Store_FlexComponent_Images",
+				"parameters": [
+					"provide_xml var",
+					"componentversiondata var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "Module_Provision_Store_FlexComponent_Dependencies",
 				"parameters": [
 					"provide_xml var",
@@ -66944,6 +69974,14 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "JSON_FlexComponent_Download_Load_Images",
+				"parameters": [
+					"managedproperty var",
+					"data var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "JSON_FlexComponent_Download_Load_Templates",
 				"parameters": [
 					"managedproperty var",
@@ -66986,6 +70024,15 @@
 			},
 			{
 				"name": "JSON_FlexComponent_Download_Write_Preview",
+				"parameters": [
+					"managedproperty var",
+					"temp_directory var",
+					"data var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_FlexComponent_Download_Write_Images",
 				"parameters": [
 					"managedproperty var",
 					"temp_directory var",
@@ -67157,6 +70204,15 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "JSON_FlexRegisteredComponentVersion_Download_Load_Images",
+				"parameters": [
+					"component var",
+					"componentversion var",
+					"data var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "JSON_FlexRegisteredComponentVersion_Download_Load_Templates",
 				"parameters": [
 					"component var",
@@ -67195,6 +70251,16 @@
 			},
 			{
 				"name": "JSON_FlexRegisteredComponentVersion_Download_Write_Preview",
+				"parameters": [
+					"component var",
+					"componentversion var",
+					"temp_directory var",
+					"data var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_FlexRegisteredComponentVersion_Download_Write_Images",
 				"parameters": [
 					"component var",
 					"componentversion var",
@@ -67966,10 +71032,10 @@
 			{
 				"name": "SanitizeCSSStyle",
 				"parameters": [
-					"name var",
-					"prefix var",
-					"value var",
-					"suffix var"
+					"name",
+					"prefix",
+					"value",
+					"suffix"
 				],
 				"returnValue": "l.void"
 			},
@@ -67977,6 +71043,21 @@
 				"name": "FilepathSafeString",
 				"parameters": [
 					"string"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "DetokenizePath",
+				"parameters": [
+					"source var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "SanitizeComponentImage",
+				"parameters": [
+					"image_filename var",
+					"image var"
 				],
 				"returnValue": "l.void"
 			},
@@ -73040,6 +76121,348 @@
 		"moduleVar": "l.__module_cmp_mv_taxfields"
 	},
 	{
+		"distroPath": "g.Module_Root $ l.__module_cmp_mv_theme:module",
+		"functions": [
+			{
+				"name": "Module_Description",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Install_Store",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Upgrade_Store",
+				"parameters": [
+					"module var",
+					"version"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Uninstall_Store",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StoreUtilityModule_LeftNavigation_Privileges",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StoreUtilityModule_LeftNavigation",
+				"parameters": [
+					"module var",
+					"indent"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StoreUtilityModule_Screen_Privileges",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StoreUtilityModule_Screen",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StoreUtilityModule_Validate",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StoreUtilityModule_Action_Privileges",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StoreUtilityModule_Action",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_Theme_Update",
+				"parameters": [
+					"module var",
+					"theme var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Tabs",
+				"parameters": [
+					"module var",
+					"item",
+					"settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Validate",
+				"parameters": [
+					"module var",
+					"item",
+					"field_prefix",
+					"fields var",
+					"settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Update_Requires_Version",
+				"parameters": [
+					"module var",
+					"page var",
+					"item",
+					"field_prefix",
+					"fields var",
+					"settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Update",
+				"parameters": [
+					"module var",
+					"item",
+					"field_prefix",
+					"fields var",
+					"settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_PostUpdate",
+				"parameters": [
+					"module var",
+					"page var",
+					"item",
+					"field_prefix",
+					"fields var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Content",
+				"parameters": [
+					"module var",
+					"item",
+					"tab",
+					"load_fields",
+					"field_prefix",
+					"fields var",
+					"settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Defaults",
+				"parameters": [
+					"module var",
+					"item",
+					"settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Page_Assign",
+				"parameters": [
+					"module var",
+					"page var",
+					"item",
+					"settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Page_Unassign",
+				"parameters": [
+					"module var",
+					"page var",
+					"item",
+					"settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Page_Copy",
+				"parameters": [
+					"module var",
+					"item",
+					"source_branch var",
+					"source_page var",
+					"source_settings var",
+					"dest_branch var",
+					"dest_page var",
+					"dest_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Prerender",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"param"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Render_Head",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Render_Start",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"param"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Render_End",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"param"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "CSSResourceModule_Resource_Render",
+				"parameters": [
+					"module var",
+					"cssresource var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "CSSResourceModule_Resource_LastModified",
+				"parameters": [
+					"module var",
+					"cssresource var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "CSSResourceModule_Resource_Integrity",
+				"parameters": [
+					"module var",
+					"cssresource var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "CSSResourceModule_Render_CSSResource",
+				"parameters": [
+					"module var",
+					"cssresource var",
+					"group_code",
+					"all_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "FontEmbed_Generate",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "FontEmbedGenerator_Google",
+				"parameters": [
+					"fonts var",
+					"font_count"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StyleResource_Update",
+				"parameters": [
+					"module var",
+					"theme var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StyleResource_Generate_Content",
+				"parameters": [
+					"theme var",
+					"content var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StyleResource_Generate_Typography",
+				"parameters": [
+					"typography var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StyleResource_Generate_Button",
+				"parameters": [
+					"button var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StyleResource_Generate_Breakpoint",
+				"parameters": [
+					"theme var",
+					"breakpoint var"
+				],
+				"returnValue": "l.void"
+			}
+		],
+		"moduleCode": "cmp-mv-theme",
+		"moduleVar": "l.__module_cmp_mv_theme"
+	},
+	{
 		"distroPath": "g.Module_Root $ l.__module_cmp_mv_uslprodfields:module",
 		"functions": [
 			{
@@ -76107,6 +79530,24 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "Volume_Item_Sort_Identical_ItemsDescending",
+				"parameters": [
+					"left var",
+					"right var",
+					"data var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Volume_Item_Sort_Identical_ItemsAscending",
+				"parameters": [
+					"left var",
+					"right var",
+					"data var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "Volume_Item_Sort_Product_TotalPriceDescending",
 				"parameters": [
 					"left var",
@@ -78104,14 +81545,6 @@
 				"parameters": [
 					"value",
 					"allowed"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Sitemap_Ping_SearchEngines",
-				"parameters": [
-					"config var",
-					"sitemap_url"
 				],
 				"returnValue": "l.void"
 			},
@@ -81180,7 +84613,27 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "Validate_Weight",
+				"parameters": [
+					"session var",
+					"record var",
+					"column var",
+					"required"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "Validate_Currency",
+				"parameters": [
+					"session var",
+					"record var",
+					"column var",
+					"required"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Validate_Price",
 				"parameters": [
 					"session var",
 					"record var",
@@ -81327,6 +84780,20 @@
 					"initial"
 				],
 				"returnValue": "l.void"
+			},
+			{
+				"name": "Column_Map_Version",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Column_Map_Upgrade",
+				"parameters": [
+					"import var",
+					"columns var",
+					"column_count"
+				],
+				"returnValue": "l.void"
 			}
 		],
 		"moduleCode": "categoryimport",
@@ -81454,6 +84921,22 @@
 					"module var",
 					"import var",
 					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ImportModule_Delete",
+				"parameters": [
+					"module var",
+					"import var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ImportModule_Delimited_Column_Map",
+				"parameters": [
+					"module var",
+					"import var"
 				],
 				"returnValue": "l.void"
 			},
@@ -82133,6 +85616,22 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "ImportModule_Delete",
+				"parameters": [
+					"module var",
+					"import var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ImportModule_Delimited_Column_Map",
+				"parameters": [
+					"module var",
+					"import var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "Import_Add_Only",
 				"parameters": [
 					"import var",
@@ -82701,6 +86200,22 @@
 					"module var",
 					"import var",
 					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ImportModule_Delete",
+				"parameters": [
+					"module var",
+					"import var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ImportModule_Delimited_Column_Map",
+				"parameters": [
+					"module var",
+					"import var"
 				],
 				"returnValue": "l.void"
 			},
@@ -83746,6 +87261,22 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "ImportModule_Delete",
+				"parameters": [
+					"module var",
+					"import var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ImportModule_Delimited_Column_Map",
+				"parameters": [
+					"module var",
+					"import var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "Create_Variants",
 				"parameters": [
 					"session var",
@@ -83977,281 +87508,6 @@
 		],
 		"moduleCode": "variantimport",
 		"moduleVar": "l.__module_variantimport"
-	},
-	{
-		"distroPath": "g.Module_Root $ l.__module_elf:module",
-		"functions": [
-			{
-				"name": "Module_Description",
-				"parameters": [
-					"module var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Install_Store",
-				"parameters": [
-					"module var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Upgrade_Store",
-				"parameters": [
-					"module var",
-					"version"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Uninstall_Store",
-				"parameters": [
-					"module var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Logging_Validate",
-				"parameters": [
-					"module var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Logging_Update",
-				"parameters": [
-					"module var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Logging_Tabs",
-				"parameters": [
-					"module var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Logging_Content",
-				"parameters": [
-					"module var",
-					"tab",
-					"load_fields"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "LogModule_Action",
-				"parameters": [
-					"module var",
-					"action"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "LogModule_Screen",
-				"parameters": [
-					"module var",
-					"screen"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "LogModule_UIException",
-				"parameters": [
-					"module var",
-					"code"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "ELF_Export_ELF1",
-				"parameters": [
-					"elf var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "ELF_Export_ELF1_LowLevel",
-				"parameters": [
-					"elf var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "ELF_Export_ELF2",
-				"parameters": [
-					"elf var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "ELF_Export_ELF2_LowLevel",
-				"parameters": [
-					"elf var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Provision_Store",
-				"parameters": [
-					"module var",
-					"provide_xml var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "ELF_Load",
-				"parameters": [
-					"elf var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "ELF_Insert",
-				"parameters": [
-					"elf var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "ELF_Update",
-				"parameters": [
-					"elf var"
-				],
-				"returnValue": "l.void"
-			}
-		],
-		"moduleCode": "elf",
-		"moduleVar": "l.__module_elf"
-	},
-	{
-		"distroPath": "g.Module_Root $ l.__module_malf:module",
-		"functions": [
-			{
-				"name": "Module_Description",
-				"parameters": [
-					"module var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Install_Store",
-				"parameters": [
-					"module var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Upgrade_Store",
-				"parameters": [
-					"module var",
-					"version"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Uninstall_Store",
-				"parameters": [
-					"module var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Logging_Validate",
-				"parameters": [
-					"module var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Logging_Update",
-				"parameters": [
-					"module var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Logging_Tabs",
-				"parameters": [
-					"module var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Logging_Content",
-				"parameters": [
-					"module var",
-					"tab",
-					"load_fields"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "LogModule_Action",
-				"parameters": [
-					"module var",
-					"action"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "LogModule_Screen",
-				"parameters": [
-					"module var",
-					"screen"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "LogModule_UIException",
-				"parameters": [
-					"module var",
-					"code"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "MALF_LogActivity",
-				"parameters": [
-					"action",
-					"screen",
-					"parameters"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "Module_Provision_Store",
-				"parameters": [
-					"module var",
-					"provide_xml var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "MALF_Load",
-				"parameters": [
-					"malf var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "MALF_Insert",
-				"parameters": [
-					"malf var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "MALF_Update",
-				"parameters": [
-					"malf var"
-				],
-				"returnValue": "l.void"
-			}
-		],
-		"moduleCode": "malf",
-		"moduleVar": "l.__module_malf"
 	},
 	{
 		"distroPath": "g.Module_Root $ l.__module_check:module",
@@ -86450,15 +89706,6 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "CustomerSales_Gross_Sort_Callback",
-				"parameters": [
-					"left var",
-					"right var",
-					"data var"
-				],
-				"returnValue": "l.void"
-			},
-			{
 				"name": "CustomerSales_Populate_Customer_TempTable_Orders",
 				"parameters": [
 					"query var"
@@ -87100,14 +90347,7 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "ProductSales_Populate_Product_TempTable_Gross_LowLevel_OrderItems",
-				"parameters": [
-					"query var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "ProductSales_Populate_Product_TempTable_Gross_LowLevel_OrderOptions",
+				"name": "ProductSales_Populate_Product_TempTable_Gross_LowLevel",
 				"parameters": [
 					"query var"
 				],
@@ -88580,23 +91820,9 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "SubscriptionProductStats_Create_Subtotal_TempTable",
-				"parameters": [
-					"query var"
-				],
-				"returnValue": "l.void"
-			},
-			{
 				"name": "SubscriptionProductStats_Index_Subtotal_TempTable",
 				"parameters": [
 					"query var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "SubscriptionProductStats_Drop_Subtotal_TempTable",
-				"parameters": [
-					"table_name"
 				],
 				"returnValue": "l.void"
 			},
@@ -88646,14 +91872,6 @@
 			},
 			{
 				"name": "SubscriptionProductStats_Populate_Product_TempTable_GrossRevenue",
-				"parameters": [
-					"report var",
-					"query var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "SubscriptionProductStats_Populate_Product_TempTable_GrossRevenue_LowLevel",
 				"parameters": [
 					"report var",
 					"query var"
@@ -97152,14 +100370,6 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "JSON_CombinationFacetField_Validate",
-				"parameters": [
-					"facet var",
-					"field var"
-				],
-				"returnValue": "l.void"
-			},
-			{
 				"name": "JSON_CombinationFacetField_Insert",
 				"parameters": [
 					"module var"
@@ -97168,6 +100378,13 @@
 			},
 			{
 				"name": "JSON_CombinationFacetField_Update",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_CombinationFacetField_Update_SortDescending",
 				"parameters": [
 					"module var"
 				],
@@ -101452,8 +104669,8 @@
 					"data var",
 					"query var",
 					"code",
-					"operator",
-					"value",
+					"operator var",
+					"value var",
 					"is_conjunctive var"
 				],
 				"returnValue": "l.void"
@@ -101464,6 +104681,18 @@
 					"data var",
 					"query var",
 					"code",
+					"operator",
+					"value"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "CustomFields_Query_Search_CommaSeparatedList_With_Type",
+				"parameters": [
+					"query var",
+					"type",
+					"column",
+					"column_long",
 					"operator",
 					"value"
 				],
@@ -101767,13 +104996,6 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "JSON_ImageManagement_Delete_UnreferencedImages",
-				"parameters": [
-					"module var"
-				],
-				"returnValue": "l.void"
-			},
-			{
 				"name": "JSON_ImageManagement_CheckForUpdatedMasterImages",
 				"parameters": [
 					"module var"
@@ -101920,17 +105142,12 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "ImageManagement_Delete_UnreferencedImages",
-				"parameters": [],
-				"returnValue": "l.void",
-				"description": "Utility Functions"
-			},
-			{
 				"name": "Image_Count",
 				"parameters": [
 					"count var"
 				],
-				"returnValue": "l.void"
+				"returnValue": "l.void",
+				"description": "Utility Functions"
 			},
 			{
 				"name": "GeneratedImage_Count",
@@ -104555,6 +107772,1187 @@
 		"moduleVar": "l.__module_orderworkflow"
 	},
 	{
+		"distroPath": "g.Module_Root $ l.__module_productcharges:module",
+		"functions": [
+			{
+				"name": "Module_Description",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Install_Store",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Uninstall_Store",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Upgrade_Store",
+				"parameters": [
+					"module var",
+					"version"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Tabs",
+				"parameters": [
+					"module var",
+					"item",
+					"settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Validate",
+				"parameters": [
+					"module var",
+					"item",
+					"field_prefix",
+					"fields var",
+					"settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Update",
+				"parameters": [
+					"module var",
+					"item",
+					"field_prefix",
+					"fields var",
+					"settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Content",
+				"parameters": [
+					"module var",
+					"item",
+					"tab",
+					"load_fields",
+					"field_prefix",
+					"fields var",
+					"settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Defaults",
+				"parameters": [
+					"module var",
+					"item",
+					"settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Page_Assign",
+				"parameters": [
+					"module var",
+					"page var",
+					"item",
+					"settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Page_Unassign",
+				"parameters": [
+					"module var",
+					"page var",
+					"item",
+					"settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Prerender",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"param"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Render_Head",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Render_Start",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"param"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Render_End",
+				"parameters": [
+					"module var",
+					"item",
+					"all_settings var",
+					"settings var",
+					"param"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Page_Copy",
+				"parameters": [
+					"module var",
+					"item",
+					"source_branch var",
+					"source_page var",
+					"source_settings var",
+					"dest_branch var",
+					"dest_page var",
+					"dest_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Update_Requires_Version",
+				"parameters": [
+					"module var",
+					"page var",
+					"item",
+					"field_prefix",
+					"fields var",
+					"settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_PostUpdate",
+				"parameters": [
+					"module var",
+					"page var",
+					"item",
+					"field_prefix",
+					"fields var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ComponentModule_Initialize_Fragment",
+				"parameters": [
+					"module var",
+					"item",
+					"page_all_settings var",
+					"page_item_settings var",
+					"fragment_all_settings var",
+					"fragment_item_settings var",
+					"merged_all_settings var",
+					"merged_item_settings var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Provision_Store",
+				"parameters": [
+					"module var",
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Provision_Store_ProductChargeType_Add",
+				"parameters": [
+					"module var",
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Provision_Store_ProductChargeType_Update",
+				"parameters": [
+					"module var",
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Provision_Store_ProductChargeType_Delete",
+				"parameters": [
+					"module var",
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Provision_Store_ProductChargeTypeCollection_Assign",
+				"parameters": [
+					"module var",
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Provision_Store_ProductChargeTypeCollection_Unassign",
+				"parameters": [
+					"module var",
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Provision_Store_ProductChargeTypeCollection_Update",
+				"parameters": [
+					"module var",
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Provision_Store_ProductChargeTypeProduct_Assign",
+				"parameters": [
+					"module var",
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Provision_Store_ProductChargeTypeProduct_Unassign",
+				"parameters": [
+					"module var",
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Provision_Store_ProductChargeTypeProduct_Update",
+				"parameters": [
+					"module var",
+					"provide_xml var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Product_BatchEdit_Tabs",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Product_BatchEdit_Head",
+				"parameters": [
+					"module var",
+					"tab"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Product_BatchEdit_Content",
+				"parameters": [
+					"module var",
+					"tab",
+					"load_fields"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Product_BatchEdit_Delete",
+				"parameters": [
+					"module var",
+					"product var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Product_BatchEdit_Update",
+				"parameters": [
+					"module var",
+					"product var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Product_BatchEdit_Validate",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Product_Tabs",
+				"parameters": [
+					"module var",
+					"product var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Product_Head",
+				"parameters": [
+					"module var",
+					"tab",
+					"product var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Product_Content",
+				"parameters": [
+					"module var",
+					"tab",
+					"load_fields",
+					"product var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Product_Validate",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Product_Insert",
+				"parameters": [
+					"module var",
+					"product var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Product_Delete",
+				"parameters": [
+					"module var",
+					"product var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Product_Update",
+				"parameters": [
+					"module var",
+					"product var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StoreUtilityModule_Validate",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StoreUtilityModule_Validate_ProductChargeType_Update",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StoreUtilityModule_Action_Privileges",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StoreUtilityModule_Action",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StoreUtilityModule_Action_ProductChargeType_Update",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StoreUtilityModule_Action_ProductChargeType_Delete",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StoreUtilityModule_LeftNavigation_Privileges",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StoreUtilityModule_LeftNavigation",
+				"parameters": [
+					"module var",
+					"indent"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StoreUtilityModule_Screen_Privileges",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StoreUtilityModule_Screen",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_Product_Insert",
+				"parameters": [
+					"module var",
+					"product var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_Product_Update",
+				"parameters": [
+					"module var",
+					"product var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_Product_Delete",
+				"parameters": [
+					"module var",
+					"product var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_Product_Copy",
+				"parameters": [
+					"module var",
+					"source_product var",
+					"dest_product var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_Product_LowStock",
+				"parameters": [
+					"module var",
+					"product var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_Product_OutOfStock",
+				"parameters": [
+					"module var",
+					"product var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_BasketItem_Insert",
+				"parameters": [
+					"module var",
+					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_BasketItem_Update",
+				"parameters": [
+					"module var",
+					"original_basketitem var",
+					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_BasketItem_Delete",
+				"parameters": [
+					"module var",
+					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_QuoteItem_Insert",
+				"parameters": [
+					"module var",
+					"quoteitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_QuoteItem_Update",
+				"parameters": [
+					"module var",
+					"original_quoteitem var",
+					"quoteitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_QuoteItem_Delete",
+				"parameters": [
+					"module var",
+					"quoteitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_OrderItem_Insert",
+				"parameters": [
+					"module var",
+					"orderitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_OrderItem_Update",
+				"parameters": [
+					"module var",
+					"original_orderitem var",
+					"orderitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_OrderItem_Delete",
+				"parameters": [
+					"module var",
+					"orderitem_count",
+					"original_orderitems var",
+					"orderitems var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_OrderItem_StatusChange",
+				"parameters": [
+					"module var",
+					"orderitem_count",
+					"original_orderitems var",
+					"orderitems var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Runtime_BasketItem_Insert_Validate",
+				"parameters": [
+					"module var",
+					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Runtime_BasketItem_Insert",
+				"parameters": [
+					"module var",
+					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Runtime_BasketItem_Update_Validate",
+				"parameters": [
+					"module var",
+					"original_basketitem var",
+					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Runtime_BasketItem_Update",
+				"parameters": [
+					"module var",
+					"original_basketitem var",
+					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Runtime_BasketItem_Delete_Validate",
+				"parameters": [
+					"module var",
+					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Runtime_BasketItem_Delete",
+				"parameters": [
+					"module var",
+					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Collection_Rebuild_Add_Products",
+				"parameters": [
+					"module var",
+					"col_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Collection_Rebuild_Remove_Products",
+				"parameters": [
+					"module var",
+					"col_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Collection_Rebuild_Remove_Unreferenced_Products",
+				"parameters": [
+					"module var",
+					"col_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Collection_Product_Add",
+				"parameters": [
+					"module var",
+					"col_id",
+					"product_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Collection_Product_Remove",
+				"parameters": [
+					"module var",
+					"col_id",
+					"product_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Collection_Product_Remove_Unreferenced",
+				"parameters": [
+					"module var",
+					"product_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Collection_Product_Remove_All",
+				"parameters": [
+					"module var",
+					"col_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Clientside",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Clientside_Output_File",
+				"parameters": [
+					"module var",
+					"filename"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Clientside_File_Integrity",
+				"parameters": [
+					"module var",
+					"filename",
+					"minified"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Clientside_Combined_Integrity",
+				"parameters": [
+					"module var",
+					"filename",
+					"minified"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_JSON",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_ProductChargeType_OnDemandColumns",
+				"parameters": [
+					"productchargetype var",
+					"ondemandcolumns var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_ProductChargeType_Read",
+				"parameters": [
+					"productchargetype var",
+					"ondemandcolumns var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_ProductChargeType_Load",
+				"parameters": [
+					"productchargetype var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_ProductChargeTypeList_Load_Query",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "JSON_ProductChargeTypeList_Load_Query_Filter",
+				"parameters": [
+					"query var",
+					"field_count var",
+					"filter_name",
+					"filter_value",
+					"data var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "JSON_ProductChargeType_Insert",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_ProductChargeType_Delete",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_ProductChargeType_ProductIndex_Load_ID",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_ProductChargeType_ProductList_Load_Query",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "JSON_Product_ProductChargeTypeList_Load_Query",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "JSON_ProductChargeTypeProductList_Add",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_ProductChargeTypeProductList_Remove",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_ProductChargeTypeProduct_Update",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_ProductChargeType_CollectionIndex_Load_ID",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_ProductChargeType_CollectionList_Load_Query",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "JSON_ProductChargeTypeCollection_Add",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_ProductChargeTypeCollection_Remove",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_ProductChargeTypeCollection_Update",
+				"parameters": [
+					"module var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeType_Read",
+				"parameters": [
+					"productchargetype var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeType_Insert",
+				"parameters": [
+					"productchargetype var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeType_Update",
+				"parameters": [
+					"productchargetype var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeType_Delete",
+				"parameters": [
+					"productchargetype var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeType_Delete_LowLevel",
+				"parameters": [
+					"pct_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeType_Delete_Product_ID",
+				"parameters": [
+					"product_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeType_Load_ID",
+				"parameters": [
+					"id",
+					"productchargetype var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeType_Load_Code",
+				"parameters": [
+					"code",
+					"productchargetype var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeTypeList_Load_All",
+				"parameters": [
+					"productchargetypes var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "Runtime_ProductChargeTypeList_Load_Product",
+				"parameters": [
+					"product_id",
+					"productchargetypes var"
+				],
+				"returnValue": "l.count"
+			},
+			{
+				"name": "ProductChargeTypeXCollection_Read",
+				"parameters": [
+					"productchargetypexcollection var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeTypeXCollection_Insert",
+				"parameters": [
+					"productchargetypexcollection var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeTypeXCollection_Update",
+				"parameters": [
+					"productchargetypexcollection var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeTypeXCollection_Delete",
+				"parameters": [
+					"pct_id",
+					"col_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeTypeXCollection_Delete_All_ProductChargeType",
+				"parameters": [
+					"pct_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeTypeXCollection_Delete_All_Collection",
+				"parameters": [
+					"col_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeTypeXCollection_Load",
+				"parameters": [
+					"pct_id",
+					"col_id",
+					"productchargetypexcollection var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeTypeXProduct_Read",
+				"parameters": [
+					"productchargetypexproduct var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeTypeXProduct_Insert",
+				"parameters": [
+					"productchargetypexproduct var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeTypeXProduct_Update",
+				"parameters": [
+					"productchargetypexproduct var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeTypeXProduct_Delete",
+				"parameters": [
+					"productchargetypexproduct var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeTypeXProduct_Delete_LowLevel",
+				"parameters": [
+					"pct_id",
+					"product_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeTypeXProduct_Delete_All_ProductChargeType",
+				"parameters": [
+					"pct_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeTypeXProduct_Delete_All_Product",
+				"parameters": [
+					"product_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeTypeXProduct_Load",
+				"parameters": [
+					"pct_id",
+					"product_id",
+					"productchargetypexproduct var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeTypeXProductCollectionExclusion_Read",
+				"parameters": [
+					"productchargetypexproductcollectionexclusion var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeTypeXProductCollectionExclusion_Insert",
+				"parameters": [
+					"productchargetypexproductcollectionexclusion var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeTypeXProductCollectionExclusion_Delete",
+				"parameters": [
+					"pct_id",
+					"product_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeTypeXProductCollectionExclusion_Delete_All_ProductChargeType",
+				"parameters": [
+					"pct_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeTypeXProductCollectionExclusion_Delete_All_Product",
+				"parameters": [
+					"product_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeTypeXProductCollectionExclusion_Load",
+				"parameters": [
+					"pct_id",
+					"product_id",
+					"productchargetypexproductcollectionexclusion var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeType_Add_Collection_Products",
+				"parameters": [
+					"productchargetypexcollection var"
+				],
+				"returnValue": "l.void",
+				"description": "Product Charge Type Collection Assign/Unassign Helper Functions"
+			},
+			{
+				"name": "ProductChargeType_Remove_Collection_Products",
+				"parameters": [
+					"productchargetype var",
+					"col_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "CollectionProductCharges_Add_Product",
+				"parameters": [
+					"col_id",
+					"product_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "CollectionProductCharges_Remove_Product",
+				"parameters": [
+					"col_id",
+					"product_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductCharges_Remove_Unused_Collection_Product",
+				"parameters": [
+					"product_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "CollectionProductCharges_Rebuild_Add_Products",
+				"parameters": [
+					"col_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "CollectionProductCharges_Rebuild_Remove_Products",
+				"parameters": [
+					"col_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "CollectionProductCharges_Rebuild_Remove_Unused_Products",
+				"parameters": [
+					"col_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductChargeType_Delete_All_Product",
+				"parameters": [
+					"product var"
+				],
+				"returnValue": "l.void"
+			}
+		],
+		"moduleCode": "productcharges",
+		"moduleVar": "l.__module_productcharges"
+	},
+	{
 		"distroPath": "g.Module_Root $ l.__module_productdata:module",
 		"functions": [
 			{
@@ -105886,6 +110284,144 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "Module_Notify_AvailabilityGroup_Insert",
+				"parameters": [
+					"module var",
+					"availabilitygroup var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_AvailabilityGroup_Update",
+				"parameters": [
+					"module var",
+					"availabilitygroup var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_AvailabilityGroup_Delete",
+				"parameters": [
+					"module var",
+					"availabilitygroup var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_AvailabilityGroupXProduct_Insert",
+				"parameters": [
+					"module var",
+					"agrp_id",
+					"product_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_AvailabilityGroupXProduct_Delete",
+				"parameters": [
+					"module var",
+					"agrp_id",
+					"product_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_AvailabilityGroupXCategory_Insert",
+				"parameters": [
+					"module var",
+					"agrp_id",
+					"cat_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_AvailabilityGroupXCategory_Delete",
+				"parameters": [
+					"module var",
+					"agrp_id",
+					"cat_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_AvailabilityGroupXCustomer_Insert",
+				"parameters": [
+					"module var",
+					"agrp_id",
+					"cust_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_AvailabilityGroupXCustomer_Delete",
+				"parameters": [
+					"module var",
+					"agrp_id",
+					"cust_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_AvailGroupXBusinessAccount_Insert",
+				"parameters": [
+					"module var",
+					"agrp_id",
+					"account_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_AvailGroupXBusinessAccount_Delete",
+				"parameters": [
+					"module var",
+					"agrp_id",
+					"account_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_AvailGroupXShippingMethod_Insert",
+				"parameters": [
+					"module var",
+					"agrp_id",
+					"mod_code",
+					"meth_code"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_AvailGroupXShippingMethod_Delete",
+				"parameters": [
+					"module var",
+					"agrp_id",
+					"mod_code",
+					"meth_code"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_AvailGroupXPaymentMethod_Insert",
+				"parameters": [
+					"module var",
+					"agrp_id",
+					"mod_code",
+					"meth_code",
+					"pctype_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Module_Notify_AvailGroupXPaymentMethod_Delete",
+				"parameters": [
+					"module var",
+					"agrp_id",
+					"mod_code",
+					"meth_code",
+					"pctype_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "Module_Notify_Category_Insert",
 				"parameters": [
 					"module var",
@@ -106380,6 +110916,13 @@
 				"name": "ProductData_Notify_PriceGroupProducts",
 				"parameters": [
 					"pricegroup var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "ProductData_Notify_AvailabilityGroupProducts",
+				"parameters": [
+					"availabilitygroup var"
 				],
 				"returnValue": "l.void"
 			},
@@ -108636,9 +113179,52 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "QuoteItem_Update",
+				"name": "QuoteItem_Insert_LowLevel",
 				"parameters": [
 					"quoteitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "QuoteItemAndOptions_Insert",
+				"parameters": [
+					"quoteitem var",
+					"quoteoptions var",
+					"quoteoption_count"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "QuoteItemAndOptions_Update",
+				"parameters": [
+					"original_quoteitem var",
+					"quoteitem var",
+					"quoteoptions var",
+					"quoteoption_count"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "QuoteItem_Update",
+				"parameters": [
+					"original_quoteitem var",
+					"quoteitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "QuoteItem_Update_LowLevel",
+				"parameters": [
+					"quoteitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "QuoteItem_Update_Child_Quantity",
+				"parameters": [
+					"parent_quoteitem var",
+					"original_quantity",
+					"quantity"
 				],
 				"returnValue": "l.void"
 			},
@@ -108668,6 +113254,13 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "QuoteItem_Delete_Children",
+				"parameters": [
+					"quoteitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "QuoteItem_Delete_Line",
 				"parameters": [
 					"line_id"
@@ -108685,17 +113278,18 @@
 				"name": "QuoteItemList_Load_Quote",
 				"parameters": [
 					"quote_id",
-					"quoteitemlist var"
+					"quoteitems var"
 				],
 				"returnValue": "l.count"
 			},
 			{
-				"name": "QuoteItemList_Delete",
+				"name": "QuoteItemList_Load_Parent",
 				"parameters": [
-					"quoteitem_count",
-					"quoteitems var"
+					"quote_id",
+					"parent_id",
+					"quoteitemlist var"
 				],
-				"returnValue": "l.void"
+				"returnValue": "l.count"
 			},
 			{
 				"name": "QuoteOption_Read",
@@ -108730,21 +113324,6 @@
 				"name": "QuoteOption_Delete_All_Quote",
 				"parameters": [
 					"quote_id"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "QuoteOption_Total_Quote",
-				"parameters": [
-					"quote_id"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "QuoteOption_Total_Line",
-				"parameters": [
-					"line_id",
-					"total var"
 				],
 				"returnValue": "l.void"
 			},
@@ -108848,6 +113427,16 @@
 				"name": "Quote_Copy_Basket",
 				"parameters": [
 					"quote"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Quote_Copy_BasketItem",
+				"parameters": [
+					"quote var",
+					"basketitem var",
+					"parent_id",
+					"quoteitem var"
 				],
 				"returnValue": "l.void"
 			},
@@ -109076,6 +113665,31 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "Quote_Copy_QuoteItem",
+				"parameters": [
+					"quote var",
+					"original_quoteitem var",
+					"parent_id",
+					"quoteitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Quote_Convert_QuoteItem",
+				"parameters": [
+					"quote var",
+					"order var",
+					"orderinfo var",
+					"quoteitem var",
+					"parent_id",
+					"discount_pricegroup_id_lookup var",
+					"discount_pricegroup_ids var",
+					"discount_pricegroup_id_count var",
+					"orderitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "Quote_Validate_CustomFields",
 				"parameters": [
 					"custom_fields var",
@@ -109118,6 +113732,17 @@
 					"quote_id",
 					"basket_id",
 					"basketinfo var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Basket_Copy_QuoteItem",
+				"parameters": [
+					"quoteitem var",
+					"quote_id",
+					"basket_id",
+					"product var",
+					"basketitem var"
 				],
 				"returnValue": "l.void"
 			},
@@ -109176,6 +113801,18 @@
 				"returnValue": "l.void"
 			},
 			{
+				"name": "Quote_DummyBasket_CopyQuoteItem",
+				"parameters": [
+					"quote var",
+					"basket var",
+					"basketinfo var",
+					"quoteitem var",
+					"parent_id",
+					"basketitem var"
+				],
+				"returnValue": "l.void"
+			},
+			{
 				"name": "Quote_DummyBasket_Cleanup",
 				"parameters": [],
 				"returnValue": "l.void"
@@ -109193,6 +113830,16 @@
 				"parameters": [
 					"basket var",
 					"quote var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "Discount_Quote_CopyBasketItem",
+				"parameters": [
+					"quote var",
+					"basketitem var",
+					"parent_id",
+					"quoteitem var"
 				],
 				"returnValue": "l.void"
 			},
@@ -109350,6 +113997,15 @@
 			{
 				"name": "Quote_Append_NavigationItem",
 				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "QuoteItem_Calculate_Total",
+				"parameters": [
+					"quoteitem var",
+					"quoteoptions var",
+					"quoteoption_count"
+				],
 				"returnValue": "l.void"
 			}
 		],
@@ -109582,12 +114238,27 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "JSON_ReviewBaskets_SubscriptionBasketItem_Add",
+				"name": "JSON_ReviewBaskets_BasketItem_DetermineVariant",
 				"parameters": [],
 				"returnValue": "l.void"
 			},
 			{
-				"name": "JSON_ReviewBaskets_SubscriptionBasketItem_Update",
+				"name": "JSON_ReviewBaskets_BasketItem_DetermineVariant_LowLevel",
+				"parameters": [
+					"product var",
+					"basketoptions var",
+					"basketoption_count",
+					"variant_id var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_ReviewBaskets_SubscriptionAndBasketItem_Add",
+				"parameters": [],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "JSON_ReviewBaskets_SubscriptionAndBasketItem_Update",
 				"parameters": [],
 				"returnValue": "l.void"
 			},
@@ -109603,21 +114274,12 @@
 				"returnValue": "l.void"
 			},
 			{
-				"name": "JSON_BasketItem_InsertAttributes",
-				"parameters": [
-					"basketitem var",
-					"basketoptions var",
-					"basketoption_count"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "JSON_ReviewBaskets_BasketItem_DetermineVariant",
+				"name": "JSON_ReviewBaskets_BasketItem_Load_ProductAttribute",
 				"parameters": [
 					"product var",
-					"basketoptions var",
-					"basketoption_count",
-					"variant_id var"
+					"attribute var",
+					"basketoption var",
+					"loaded_attribute var"
 				],
 				"returnValue": "l.void"
 			},
@@ -109662,13 +114324,6 @@
 				"name": "JSON_ReviewBaskets_BasketTotal_Response",
 				"parameters": [
 					"basket var"
-				],
-				"returnValue": "l.void"
-			},
-			{
-				"name": "ReviewBaskets_BasketItem_Update",
-				"parameters": [
-					"basketitem var"
 				],
 				"returnValue": "l.void"
 			}
@@ -111109,6 +115764,37 @@
 			},
 			{
 				"name": "StandardScheduledTasks_AnalyzeTables",
+				"parameters": [
+					"task var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StandardScheduledTasks_AISearchIndex",
+				"parameters": [
+					"task var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StandardScheduledTasks_AISearchIndex_Process",
+				"parameters": [
+					"task var",
+					"conn_id"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StandardScheduledTasks_AISearchIndex_ProcessQueue",
+				"parameters": [
+					"conn_id",
+					"aisettings var",
+					"pending_queue var"
+				],
+				"returnValue": "l.void"
+			},
+			{
+				"name": "StandardScheduledTasks_AISearchIndex_Process_TimeLimitReached",
 				"parameters": [
 					"task var"
 				],
