@@ -1,6 +1,10 @@
 # Miva IDE CHANGELOG
 
-## v1.33.0 (latest)
+## v1.34.0 (latest)
+
+* Updated LSK data to latest version (10.12.03).
+
+## v1.33.0
 
 * Fixed bug where symbolic links within the workspace broke internal directory "walk" function.
 
