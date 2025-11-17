@@ -18,7 +18,7 @@
 		"node": "*"
 	},
 	"dependencies": {
-		"glob": "^10.0.0",
+		"glob": "^11.1.0",
 		"lodash.clonedeep": "^4.5.0",
 		"lodash.get": "^4.4.2",
 		"lodash.has": "^4.5.2",
