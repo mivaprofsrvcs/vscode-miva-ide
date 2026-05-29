@@ -1,6 +1,10 @@
 # Miva IDE CHANGELOG
 
-## v1.36.0 (latest)
+## v1.37.0 (latest)
+
+* Updated `MvFUNCTION` snippet to include `STANDARDOUTPUTLEVEL` and `ERROROUTPUTLEVEL` attributes by default.
+
+## v1.36.0
 
 * Added status bars to show `mmt` information when within a workspace containing an `mmt` directory.
 

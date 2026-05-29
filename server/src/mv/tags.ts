@@ -5957,7 +5957,7 @@ export const mvTagData: Record<string, TagData> = {
 			"/"
 		],
 		"documentation": "A function is a sub-section of code executed by a call to the function name. MivaScript contains many built in functions like toupper(string). This tag lets you create your own user defined functions.\n\nUser defined functions enable you to write re-usable code that can be called on to perform operations at any point in\nyour program, by calling the function within an expression. Even if a function is only called once in your program,\nmoving the code out of the main body of the program and replacing it with a function call still helps to make the\nprogram more 'modular', easier to read and debug. A function may output HTML to the screen, perform database I/O or\noptionally return a value.",
-		"insertText": "<MvFUNCTION NAME = \"$1\" PARAMETERS = \"$2\">\n\t$3\n</MvFUNCTION>",
+		"insertText": "<MvFUNCTION NAME = \"$1\" PARAMETERS = \"$2\" STANDARDOUTPUTLEVEL = \"$3\" ERROROUTPUTLEVEL = \"\">\n\t$4\n</MvFUNCTION>",
 		"insertTextFormat": "Snippet",
 		"kind": "TypeParameter",
 		"label": "MvFUNCTION",
