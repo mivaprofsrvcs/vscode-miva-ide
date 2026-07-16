@@ -1,6 +1,13 @@
 # Miva IDE CHANGELOG
 
-## v1.37.0 (latest)
+## v1.38.0 (latest)
+
+* Added an error validation for `s.null` assignment via `mvt:assign`, `mvt:do` or `mvt:capture`.
+	* System variables are immutable, so writes through reference parameters fail silently. Includes a quick-fix to replace with `l.null`.
+	* Configurable via the `MVT.lint.showErrorForSNullAssignment` setting.
+* Updated the `g.null` assignment quick-fix to only suggest `l.null` (no longer recommends `s.null`).
+
+## v1.37.0
 
 * Updated `MvFUNCTION` snippet to include `STANDARDOUTPUTLEVEL` and `ERROROUTPUTLEVEL` attributes by default.
 

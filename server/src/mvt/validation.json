@@ -68,11 +68,7 @@
 			"replacements": [
 				{
 					"text": "l.null",
-					"message": "Replace with `l.null`"
-				},
-				{
-					"text": "s.null",
-					"message": "Replace with `s.null`",
+					"message": "Replace with `l.null`",
 					"isPreferred": true
 				}
 			]
@@ -149,5 +145,45 @@
 			"message": "Toolkit's tksl param is not compatible with Miva Merchant >= 10.08."
 		},
 		"code": "NO_TOOKIT_TKSL"
+	},
+	{
+		"match": "(?<=<mvt:(?:assign|do)[^<]*?name\\s*?=\\s*?\")(s\\.null)\\b",
+		"matchIndex": 0,
+		"checkSetting": "MVT.lint.showErrorForSNullAssignment",
+		"problem": {
+			"type": "Error",
+			"message": "Avoid assigning to `s.null`. System variables are immutable and passing `s.null` by reference prevents the receiving function from writing to it. Use `l.null` instead."
+		},
+		"code": "SYSTEM_NULL_ASSIGNMENT",
+		"data": {
+			"type": "REPLACEMENT",
+			"replacements": [
+				{
+					"text": "l.null",
+					"message": "Replace with `l.null`",
+					"isPreferred": true
+				}
+			]
+		}
+	},
+	{
+		"match": "(?<=<mvt:capture[^<]*?variable\\s*?=\\s*?\")(s\\.null)\\b",
+		"matchIndex": 0,
+		"checkSetting": "MVT.lint.showErrorForSNullAssignment",
+		"problem": {
+			"type": "Error",
+			"message": "Avoid capturing into `s.null`. System variables are immutable and passing `s.null` by reference prevents the receiving function from writing to it. Use `l.null` instead."
+		},
+		"code": "SYSTEM_NULL_CAPTURE",
+		"data": {
+			"type": "REPLACEMENT",
+			"replacements": [
+				{
+					"text": "l.null",
+					"message": "Replace with `l.null`",
+					"isPreferred": true
+				}
+			]
+		}
 	}
 ]
