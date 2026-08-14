@@ -359,7 +359,7 @@
 		"@esbuild-plugins/node-resolve": "^0.2.2",
 		"@types/node": "^18.15.11",
 		"@vscode/test-web": "^0.0.50",
-		"@vscode/vsce": "^2.22.0",
+		"@vscode/vsce": "^3.9.2",
 		"chalk": "^4.1.2",
 		"esbuild": "^0.19.5",
 		"glob": "^7.2.2",
