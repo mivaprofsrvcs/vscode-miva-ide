@@ -1,6 +1,11 @@
 # Miva IDE CHANGELOG
 
-## v1.38.0 (latest)
+## v1.38.1 (latest)
+
+* Fixed bug where autocompletion within a flex instance template would fail if `list_type: text` was used within the matching flex.json file.
+* Fixed typeo for encode functions.
+
+## v1.38.0
 
 * Added an error validation for `s.null` assignment via `mvt:assign`, `mvt:do` or `mvt:capture`.
 	* System variables are immutable, so writes through reference parameters fail silently. Includes a quick-fix to replace with `l.null`.
@@ -18,8 +23,8 @@
 ## v1.35.0
 
 * Added new builtin functions for Miva Empressa v5.45-5.51:
-	- enocdejavascriptboolean
-	- enocdejavascriptnumber
+	- encodejavascriptboolean
+	- encodejavascriptnumber
 	- gdImageAvif
 	- gdImageAvifMem
 	- gdImageAvifOutput

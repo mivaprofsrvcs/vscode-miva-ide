@@ -16,7 +16,7 @@ const buildFlexComponentPropertyPaths = (properties: any[], prefix: string, prev
 			paths = paths.concat(buildFlexComponentPropertyPaths(property.properties, prefix, [...parent, property.code]));
 
 		}
-		else if (property.type === 'list') {
+		else if (property.type === 'list' && property.list_type === 'group') {
 			paths = paths.concat(finalizeFlexComponentPropertyPath([...parent, `${property.code}:children`], prefix, property.type), buildFlexComponentPropertyPaths(property.properties, prefix, [...parent, `${property.code}:children[1]`]));
 		}
 		else {

@@ -4095,18 +4095,18 @@
 		"label": "cmark_markdown_to_html"
 	},
 	{
-		"documentation": "\n```mv\n{ enocdejavascriptboolean( value ) }\n```\n---\n\n  Encodes \"value\" in a format suitable for use inside a JavaScript boolean declaration\n\n  Parameters:\n    - value: The value to convert to a boolean\n\n  Return Value:\n    - Returns \"false\" if the value is blank or 0, \"true\" otherwise",
-		"insertText": "enocdejavascriptboolean( ${1:value} )$0",
+		"documentation": "\n```mv\n{ encodejavascriptboolean( value ) }\n```\n---\n\n  Encodes \"value\" in a format suitable for use inside a JavaScript boolean declaration\n\n  Parameters:\n    - value: The value to convert to a boolean\n\n  Return Value:\n    - Returns \"false\" if the value is blank or 0, \"true\" otherwise",
+		"insertText": "encodejavascriptboolean( ${1:value} )$0",
 		"insertTextFormat": "Snippet",
 		"kind": "Function",
-		"label": "enocdejavascriptboolean"
+		"label": "encodejavascriptboolean"
 	},
 	{
-		"documentation": "\n```mv\n{ enocdejavascriptnumber( value ) }\n```\n---\n\n  Encodes \"value\" in a format suitable for use inside a JavaScript number declaration\n\n  Parameters:\n    - value: The value to convert to a number\n\n  Return Value:\n    - Returns the passed in value as a number, using 0 if the value could not be converted to a number\n\n",
-		"insertText": "enocdejavascriptnumber( ${1:value} )$0",
+		"documentation": "\n```mv\n{ encodejavascriptnumber( value ) }\n```\n---\n\n  Encodes \"value\" in a format suitable for use inside a JavaScript number declaration\n\n  Parameters:\n    - value: The value to convert to a number\n\n  Return Value:\n    - Returns the passed in value as a number, using 0 if the value could not be converted to a number\n\n",
+		"insertText": "encodejavascriptnumber( ${1:value} )$0",
 		"insertTextFormat": "Snippet",
 		"kind": "Function",
-		"label": "enocdejavascriptnumber"
+		"label": "encodejavascriptnumber"
 	},
 	{
 		"documentation": "\n```mv\n{ gdImageAvif( im, filename, location, quality, speed ) }\n```\n---\n\n  Outputs the AVIF image to a file\n\n  Parameters:\n    - im: The internal image reference ID\n    - filename: The filepath to save the file\n    - location: The location to save the file, valid values are \"script\" and \"data\"\n    - quality: Compression quality (0-100).  0 is lowest-quality, 100 is highest\n    - speed: The speed of compression (0-10).  0 is slowest, 10 is fastest.\n\n  Return Value:\n    - Nothing on success, -1 on error\n\n",
